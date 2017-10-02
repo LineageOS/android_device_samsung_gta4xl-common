@@ -6,3 +6,6 @@ ro.vendor.cscsupported=1
 # Set cmc properties
 ro.cmc.device_type=pd
 ro.cmc.version=2.0
+
+# wifi direct
+wifi.direct.interface=p2p0
