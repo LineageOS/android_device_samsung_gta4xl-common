@@ -16,5 +16,6 @@ ro.security.keystore.keytype=sak,gak
 ### LOCKSCREEN
 lockscreen.rot_override=true
 
-### WIFI DIRECT
+### WIFI
 wifi.direct.interface=p2p0
+ro.boot.wificountrycode=00
