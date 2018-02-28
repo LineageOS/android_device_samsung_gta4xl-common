@@ -1,6 +1,6 @@
 ### AUDIO
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl \
+    android.hardware.audio@6.0-impl:32 \
     android.hardware.audio.service
 
 PRODUCT_PACKAGES += \
@@ -14,11 +14,11 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@6.0-impl
+    android.hardware.audio.effect@6.0-impl:32
 
 ### BLUETOOTH
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-impl:64 \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
@@ -27,7 +27,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     android.hardware.bluetooth.a2dp@1.0 \
     android.hardware.bluetooth.audio@2.0 \
-    android.hardware.bluetooth.audio@2.0-impl
+    android.hardware.bluetooth.audio@2.0-impl:32
 
 ### CAMERA
 PRODUCT_PACKAGES += \
@@ -41,7 +41,7 @@ PRODUCT_PACKAGES += \
 
 ### DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-impl:32 \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.3-service.clearkey
 
@@ -51,17 +51,17 @@ PRODUCT_PACKAGES += \
 
 ### GATEKEEPER
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
 
 ### GRAPHICS
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
 
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.2-impl \
+    android.hardware.graphics.composer@2.1-impl:64 \
+    android.hardware.graphics.composer@2.2-impl:64 \
     android.hardware.graphics.composer@2.2-service \
 
 PRODUCT_PACKAGES += \
@@ -90,12 +90,12 @@ PRODUCT_PACKAGES += \
 
 ### MEDIA
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-impl \
+    android.hardware.media.omx@1.0-impl:32 \
     android.hardware.media.omx@1.0-service
 
 ### MEMTRACK
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-impl:64 \
     android.hardware.memtrack@1.0-service
 
 PRODUCT_PACKAGES += \
@@ -131,7 +131,7 @@ PRODUCT_PACKAGES += \
 
 ### SENSORS
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.samsung \
+    android.hardware.sensors@1.0-impl.samsung:64 \
     android.hardware.sensors@1.0-service
 
 PRODUCT_PACKAGES += \
@@ -144,7 +144,7 @@ PRODUCT_PACKAGES += \
 
 ### SOUNDTRIGGER
 PRODUCT_PACKAGES += \
-    android.hardware.soundtrigger@2.0-impl
+    android.hardware.soundtrigger@2.0-impl:32
 
 ### TETHERING
 PRODUCT_PACKAGES += \
