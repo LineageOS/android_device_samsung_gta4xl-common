@@ -6,8 +6,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libaudioroute \
     libtinyalsa \
-    libtinycompress \
-    tinymix
+    libtinycompress
 
 PRODUCT_PACKAGES += \
     audio.r_submix.default \
