@@ -7,6 +7,9 @@ ro.vendor.cscsupported=1
 ro.cmc.device_type=sd
 ro.cmc.version=2.0
 
+### CHARGER
+ro.charger.enable_suspend=true
+
 ### KEYSTORE
 ro.security.keystore.keytype=sak,gak
 
