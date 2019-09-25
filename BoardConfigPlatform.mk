@@ -134,10 +134,6 @@ BOARD_CUSTOM_BT_CONFIG := $(PLATFORM_PATH)/hardware/bluetooth/libbt_vndcfg.txt
 ### DISPLAY
 TARGET_SCREEN_DENSITY := 240
 
-### GRAPHICS
-# hardware/interfaces/configstore/1.1/default/surfaceflinger.mk
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-
 ### HIDL
 DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
