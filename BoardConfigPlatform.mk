@@ -218,6 +218,7 @@ WIFI_DRIVER_FW_PATH_PARAM        := /sys/module/scsc_mx/parameters/base_dir
 PRODUCT_CFI_INCLUDE_PATHS        += hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib
 
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # hardware/broadcom/wlan/bcmdhd/config/Android.mk
 # external/wpa_supplicant_8/Android.mk
