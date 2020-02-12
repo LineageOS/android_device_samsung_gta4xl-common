@@ -27,6 +27,7 @@ debug.hwc.winupdate=1
 ### SURFACEFLINGER
 # Disable backpressure propagation
 debug.sf.disable_backpressure=1
+debug.sf.latch_unsignaled=1
 
 ### DEVELOPER SETTINGS
 # Disable invocation of oem_lock
