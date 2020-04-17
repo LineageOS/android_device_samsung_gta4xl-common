@@ -1,3 +1,5 @@
+# Common proprietary files - from Samsung package version P610XXU2BTI3, unless pinned
+
 ### BLUETOOTH
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
 product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
