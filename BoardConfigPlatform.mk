@@ -206,6 +206,8 @@ BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_HOSTAPD_DRIVER             := NL80211
 WIFI_DRIVER_FW_PATH_PARAM        := /sys/module/scsc_mx/parameters/base_dir
 
+PRODUCT_CFI_INCLUDE_PATHS        += hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib
+
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # hardware/broadcom/wlan/bcmdhd/config/Android.mk
