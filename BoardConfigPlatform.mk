@@ -160,7 +160,7 @@ TARGET_LD_SHIM_LIBS += \
 #BOARD_SEPOLICY_TEE_FLAVOR := teegris
 #include device/samsung_slsi/sepolicy/sepolicy.mk
 
-#BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 
 ### PARTITIONS
 BOARD_FLASH_BLOCK_SIZE := 4096

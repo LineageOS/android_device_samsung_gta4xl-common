@@ -1,0 +1,8 @@
+# file.te
+
+# ROOT
+# /dqmdbg /omr /optics /prism
+type omr_file, file_type;
+type dqmdbg_file, file_type;
+type optics_file, file_type;
+type prism_file, file_type;

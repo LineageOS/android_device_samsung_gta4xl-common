@@ -1,0 +1,5 @@
+### ROOT
+/dqmdbg(/.*)?                                u:object_r:dqmdbg_file:s0
+/omr(/.*)?                                   u:object_r:omr_file:s0
+/optics(/.*)?                                u:object_r:optics_file:s0
+/prism(/.*)?                                 u:object_r:prism_file:s0
