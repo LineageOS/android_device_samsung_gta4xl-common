@@ -130,10 +130,14 @@ PRODUCT_PACKAGES += \
     libshim_stagefright_foundation \
     libshim_sensorndkbridge
 
-## SOUNDTRIGGER
+### SOUNDTRIGGER
 PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2-impl \
     android.hardware.soundtrigger@2.0-service
+
+### USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.1-service.exynos9611
 
 ### USB TRUST HAL
 PRODUCT_PACKAGES += \
