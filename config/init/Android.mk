@@ -24,6 +24,13 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := init.exynos9611.root.rc
+LOCAL_SRC_FILES := init.exynos9611.root.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)/init/hw
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := init.exynos9611.rc
 LOCAL_SRC_FILES := init.exynos9611.rc
 LOCAL_MODULE_CLASS := ETC
