@@ -265,12 +265,7 @@ on post-fs-data
     mkdir /data/vendor/mediacodec 0700 mediacodec mediacodec
     mkdir /data/vendor/mediacodec/fruc_files 0700 mediacodec mediacodec
     mkdir /data/vendor/mediacodec/fruc_assets 0700 mediacodec mediacodec
-    copy /system/media/fruc_kernels.s9.slsi.bin /data/vendor/mediacodec/fruc_assets/fruc_kernels.s9.slsi.bin
-    copy /system/media/fruc_kernels.exynos9820.bin /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos9820.bin
-    copy /system/media/fruc_kernels.exynos990.bin /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos990.bin
-    copy /system/media/fruc_kernels.exynos980.bin /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos980.bin
-    copy /system/media/fruc_kernels.exynos9610.bin /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos9610.bin
-    copy /system/media/fruc_kernels.exynos7885.bin /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos7885.bin
+    copy /vendor/firmware/fruc_kernels.exynos9610.bin /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos9610.bin
     chown mediacodec mediacodec /data/vendor/mediacodec/fruc_assets/fruc_kernels.s9.slsi.bin
     chown mediacodec mediacodec /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos9820.bin
     chown mediacodec mediacodec /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos990.bin
