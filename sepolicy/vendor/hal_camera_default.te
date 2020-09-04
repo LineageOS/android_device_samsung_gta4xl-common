@@ -1,0 +1,3 @@
+# hal_camera_default.te
+
+vndbinder_use(hal_camera_default);

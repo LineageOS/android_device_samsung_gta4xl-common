@@ -1,0 +1,7 @@
+# init.te
+
+allow init omr_file:dir mounton;
+allow init efs_file:dir mounton;
+allow init mnt_vendor_file:dir mounton;
+
+allow init tmpfs:lnk_file create;

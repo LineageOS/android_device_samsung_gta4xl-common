@@ -1,0 +1,7 @@
+# vendor_init.te
+
+set_prop(vendor_init, vold_prop);
+
+allow vendor_init cgroup:file getattr;
+allow vendor_init tmpfs:dir { write add_name };
+allow vendor_init tmpfs:lnk_file create;

@@ -1,0 +1,4 @@
+# tzdaemon.te
+
+allow tzdaemon efs_file:dir search;
+allow tzdaemon tee_efs_file:dir search;
