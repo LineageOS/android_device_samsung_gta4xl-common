@@ -201,9 +201,11 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 endif # BOARD_AVB_ENABLE
 
 ### WIFI
+BOARD_WLAN_DEVICE                := slsi
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_HOSTAPD_DRIVER             := NL80211
 WIFI_DRIVER_FW_PATH_PARAM        := /sys/module/scsc_mx/parameters/base_dir
+
 
 # hardware/broadcom/wlan/bcmdhd/config/Android.mk
 # external/wpa_supplicant_8/Android.mk
