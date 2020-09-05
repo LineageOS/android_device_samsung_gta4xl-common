@@ -21,6 +21,7 @@
 
 ### VENDOR
 /(vendor|system/vendor)/bin/argosd           u:object_r:argosd_exec:s0
+/(vendor|system/vendor)/bin/wlbtd            u:object_r:wlbtd_exec:s0
 
 /(vendor|system/vendor)/bin/vendor\.samsung\.hardware\.security\.widevine\.keyprovisioning@[0-9]\.[0-9]-service    u:object_r:hal_drm_widevine_exec:s0
 
