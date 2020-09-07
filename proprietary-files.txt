@@ -1,0 +1,78 @@
+### CAMERA
+system/lib/libcamerahardwareinterface.so
+# Copyied by vendor_init which needs read access
+system/media/fruc_kernels.exynos9610.bin:vendor/firmware/fruc_kernels.exynos9610.bin
+
+### OMX
+system/etc/somxreg.conf
+# FIXME: Check if these can be built from source
+system/lib/libsomx263dsw.so
+system/lib/libsomx264dsw.so
+system/lib/libsomxaacd.so
+system/lib/libsomxadpcmd.so
+system/lib/libsomxamrd.so
+system/lib/libsomxcmn.so
+system/lib/libsomxcore.so
+system/lib/libsomxflacd.so
+system/lib/libsomxhevcdsw.so
+system/lib/libsomxmp3d.so
+system/lib/libsomxmp4vdsw.so
+system/lib/libsomxmp43d.so
+system/lib/libsomxnaace.so
+system/lib/libsomxvc1dsw.so
+system/lib/libsomxvp8d.so
+system/lib/libsomxwmad.so
+system/lib/libsomxwmv7d.so
+system/lib/libsomxwmv8d.so
+system/lib64/libsomx263dsw.so
+system/lib64/libsomx264dsw.so
+system/lib64/libsomxaacd.so
+system/lib64/libsomxadpcmd.so
+system/lib64/libsomxamrd.so
+system/lib64/libsomxcmn.so
+system/lib64/libsomxcore.so
+system/lib64/libsomxflacd.so
+system/lib64/libsomxhevcdsw.so
+system/lib64/libsomxmp3d.so
+system/lib64/libsomxmp4vdsw.so
+system/lib64/libsomxmp43d.so
+system/lib64/libsomxnaace.so
+system/lib64/libsomxvc1dsw.so
+system/lib64/libsomxvp8d.so
+system/lib64/libsomxwmad.so
+system/lib64/libsomxwmv7d.so
+system/lib64/libsomxwmv8d.so
+# FIXME END
+
+### RIL
+system/lib/libatparser.so
+system/lib/libfloatingfeature.so
+system/lib/libmdf.so
+system/lib/libomission_avoidance.so
+system/lib/libpacm_client.so
+system/lib/libsecnativefeature.so
+system/lib/libsecril-client.so
+system/lib/libsecure_storage.so
+system/lib/libsec_semRil.so
+system/lib64/libatparser.so
+system/lib64/libfloatingfeature.so
+system/lib64/libmdf.so
+system/lib64/libomission_avoidance.so
+system/lib64/libpacm_client.so
+system/lib64/libsecnativefeature.so
+system/lib64/libsecril-client.so
+system/lib64/libsecure_storage.so
+system/lib64/libsec_semRil.so
+
+### SAMSUNG_SLSI_CONFIGSTORE
+system/lib/vendor.samsung_slsi.hardware.configstore-utils.so
+system/lib/vendor.samsung_slsi.hardware.configstore@1.0.so
+system/lib64/vendor.samsung_slsi.hardware.configstore-utils.so
+system/lib64/vendor.samsung_slsi.hardware.configstore@1.0.so
+
+### SAMSUNG_SLSI_HWC
+system/lib/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0.so
+system/lib64/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0.so
+
+### WIDEVINE
+system/lib64/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0.so

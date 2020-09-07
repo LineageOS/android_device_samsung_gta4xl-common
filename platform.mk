@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+### PROPRIETARY VENDOR FILES
+$(call inherit-product, vendor/samsung/gta4xl-common/gta4xl-common-vendor.mk)
+
 PLATFORM_PATH := device/samsung/gta4xl-common
 
 # Device uses high-density artwork where available
