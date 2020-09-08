@@ -12,6 +12,9 @@ dalvik.vm.lockprof.threshold=500
 ro.hardware.keystore=mdfpp
 ro.security.keystore.keytype=sak,gak
 
+### LOCKSCREEN
+lockscreen.rot_override=true
+
 ### OPENGLES
 ro.opengles.version=196610
 
