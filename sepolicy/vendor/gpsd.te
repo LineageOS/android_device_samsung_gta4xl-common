@@ -1,0 +1,6 @@
+# gpsd.te
+
+allow gpsd sysfs_sec_gps:dir search;
+allow gpsd sysfs_gps_writable:file rw_file_perms;
+
+allow gpsd bt_device:chr_file rw_file_perms;

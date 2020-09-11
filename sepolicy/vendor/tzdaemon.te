@@ -2,3 +2,7 @@
 
 allow tzdaemon efs_file:dir search;
 allow tzdaemon tee_efs_file:dir search;
+allow tzdaemon mnt_vendor_file:dir search;
+
+allow tzdaemon tee_efs_file:dir { rw_file_perms add_name create remove_name };
+allow tzdaemon tee_efs_file:file { rw_file_perms create rename unlink };

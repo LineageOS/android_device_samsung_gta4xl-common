@@ -6,3 +6,6 @@ r_dir_file(kernel, sysfs_sec_key);
 
 allow kernel device:dir { add_name write };
 allow kernel device:chr_file { create setattr };
+
+allow kernel efs_file:dir search;
+r_dir_file(kernel, app_efs_file);

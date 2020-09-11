@@ -5,3 +5,7 @@ set_prop(vendor_init, vold_prop);
 allow vendor_init cgroup:file getattr;
 allow vendor_init tmpfs:dir { write add_name };
 allow vendor_init tmpfs:lnk_file create;
+allow vendor_init functionfs:file getattr;
+allow vendor_init debugfs_trace_marker:file getattr;
+
+allow vendor_init proc_swappiness:file rw_file_perms;

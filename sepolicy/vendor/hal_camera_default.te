@@ -1,3 +1,22 @@
 # hal_camera_default.te
 
 vndbinder_use(hal_camera_default);
+
+binder_call(hal_camera_default, system_server);
+binder_call(system_server, hal_camera_default);
+
+allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
+
+allow hal_camera_default hal_graphics_composer_default:fd use;
+
+r_dir_file(hal_camera_default, sysfs_camera);
+allow hal_camera_default sysfs_camera_writable:file rw_file_perms;
+
+allow hal_camera_default camera_vendor_data_file:dir search;
+allow hal_camera_default camera_vendor_data_file:file rw_file_perms;
+
+r_dir_file(hal_camera_default, sysfs_battery);
+
+get_prop(hal_camera_default, vendor_factory_prop);
+get_prop(hal_camera_default, exported_camera_prop);
+set_prop(hal_camera_default, vendor_camera_prop);

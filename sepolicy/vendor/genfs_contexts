@@ -1,0 +1,33 @@
+# genfs_contexts
+
+# DEBUGFS
+genfscon debugfs /mali/                                                                                        u:object_r:debugfs_mali:s0
+genfscon debugfs /mali/mem/                                                                                    u:object_r:debugfs_mali_mem:s0
+genfscon debugfs /ion                                                                                          u:object_r:debugfs_ion:s0
+genfscon debugfs /dma_buf                                                                                      u:object_r:debugfs_ion_dma:s0
+
+# PROC
+genfscon proc /sys/vm/swappiness                                                                               u:object_r:proc_swappiness:s0
+
+# SYSFS
+
+# class
+genfscon sysfs /class/video4linux                                                                              u:object_r:sysfs_v4l:s0
+
+# devices
+genfscon sysfs /devices/platform/148e0000.dsim/backlight/panel/max_brightness                                  u:object_r:sysfs_backlight_writable:s0
+genfscon sysfs /devices/platform/148e0000.dsim/backlight/panel/brightness                                      u:object_r:sysfs_backlight_writable:s0
+genfscon sysfs /devices/platform/13900000.spi/spi_master/spi6/spi6.0/input/input0/enabled                      u:object_r:sysfs_touchscreen_writable:s0
+genfscon sysfs /devices/platform/13840000.i2c/i2c-1/1-0049/sm5713-fuelgauge/power_supply/sm5713-fuelgauge/type u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13840000.i2c/i2c-1/1-0049/sm5713-charger/power_supply/sm5713-charger/type     u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13840000.i2c/i2c-1/1-0049/sm5713-charger/power_supply/otg/type                u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/139b0000.pinctrl/gpiochip43/gpio/gpio138/value                                u:object_r:sysfs_gps_writable:s0
+genfscon sysfs /devices/platform/148b0000.decon_f/psr_info                                                     u:object_r:sysfs_decon:s0
+genfscon sysfs /devices/platform/148b0000.decon_f/vsync                                                        u:object_r:sysfs_decon_writable:s0
+genfscon sysfs /devices/platform/12c30000.mfc0/video4linux/video6/name                                         u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/12c30000.mfc0/video4linux/video7/name                                         u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/11a10000.speedy/i2c-12/12-0000/s2mpu09-rtc/rtc/rtc0/hctosys                   u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/system/chip-id/revision                                                                u:object_r:sysfs_chipid:s0
+
+# module
+genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                                                    u:object_r:sysfs_bt_writable:s0

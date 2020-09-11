@@ -5,3 +5,13 @@ hal_server_domain(hal_drm_widevine, hal_drm);
 
 type hal_drm_widevine_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_drm_widevine);
+
+allow hal_drm_widevine mediadrm_vendor_data_file:dir { r_file_perms search };
+allow hal_drm_widevine mediadrm_vendor_data_file:file rw_file_perms;
+
+allow hal_drm_widevine secmem_device:chr_file rw_file_perms;
+
+teegris_use(hal_drm_widevine);
+
+allow hal_drm_widevine efs_file:dir search;
+allow hal_drm_widevine sec_efs_file:file r_file_perms;

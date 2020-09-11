@@ -1,0 +1,5 @@
+# mediacodec.te
+
+hal_client_domain(mediacodec, hal_power);
+
+r_dir_file(mediacodec, sysfs_v4l);

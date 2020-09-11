@@ -1,0 +1,10 @@
+# property_contexts
+
+# CAMERA
+persist.vendor.sys.camera. u:object_r:vendor_camera_prop:s0
+
+# FACTORY
+ro.factory.factory_binary  u:object_r:vendor_factory_prop:s0
+
+# WLBTD
+vendor.wlbtd.              u:object_r:vendor_wlbtd_prop:s0

@@ -1,0 +1,3 @@
+# hwservice_contexts
+
+vendor.samsung.hardware.camera.provider::ISehCameraProvider    u:object_r:hal_camera_hwservice:s0

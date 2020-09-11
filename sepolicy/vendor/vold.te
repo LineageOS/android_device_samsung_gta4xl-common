@@ -1,0 +1,4 @@
+# vold.te
+
+allow vold efs_file:dir read;
+allow vold mnt_vendor_file:dir read;
