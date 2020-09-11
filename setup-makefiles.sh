@@ -39,7 +39,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers "gta4xlwifi gta4xllte"
+write_headers "gta4xlwifi gta4xl"
 
 write_makefiles "$MY_DIR"/proprietary-files.txt true
 write_makefiles "$MY_DIR"/proprietary-files-vendor.txt true
