@@ -31,7 +31,14 @@ def AddImage(info, basename, dest):
   common.ZipWriteStr(info.output_zip, name, data)
   info.script.AppendExtra('package_extract_file("%s", "%s");' % (name, dest))
 
+def PrintInfo(info, dest):
+  info.script.Print("Patching {} image unconditionally...".format(dest.split('/')[-1]))
+
 def OTA_InstallEnd(info):
-  info.script.Print("Flashing dtbo image...")
-  AddImage(info, "dtbo.img", "/dev/block/bootdevice/by-name/dtbo")
+  PrintInfo(info, "/dev/block/by-name/dtbo")
+  AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo")
+  return
+
+def FullOTA_InstallBegin(info):
+  AddImage(info, "super_empty.img", "/dev/block/by-name/super")
   return
