@@ -4,11 +4,13 @@ vndbinder_use(hal_graphics_composer_default);
 
 hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
 
+allow hal_graphics_composer_default vendor_surfaceflinger_vndservice:service_manager { add find };
+
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket { create bind read setopt };
 
 allow hal_graphics_composer_default graphics_device:chr_file rw_file_perms;
 
-allow hal_graphics_composer_default log_vendor_data_file:dir { rw_file_perms add_name };
+allow hal_graphics_composer_default log_vendor_data_file:dir { rw_file_perms add_name search };
 allow hal_graphics_composer_default log_vendor_data_file:file { rw_file_perms create };
 
 allow hal_graphics_composer_default sysfs_decon:file r_file_perms;
