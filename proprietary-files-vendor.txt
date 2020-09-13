@@ -65,10 +65,6 @@ vendor/firmware/APBiBF_AUDIO_SLSI.bin
 vendor/firmware/SoundBoosterParam.bin
 vendor/firmware/calliope_iva.bin
 
-### BLUETOOTH
-vendor/etc/bluetooth/bt_did.conf
-vendor/lib64/libbt-vendor.so
-
 # CAMERA
 vendor/etc/init/vendor.samsung.hardware.camera.provider@3.0-service.rc
 vendor/bin/hw/vendor.samsung.hardware.camera.provider@3.0-service
