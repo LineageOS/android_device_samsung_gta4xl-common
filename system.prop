@@ -4,8 +4,11 @@ ro.product_ship=true
 # If not set or set to 0, OMX will only use BT.601 colorspace.
 ro.vendor.cscsupported=1
 # Set cmc properties
-ro.cmc.device_type=pd
+ro.cmc.device_type=sd
 ro.cmc.version=2.0
+
+# camera
+ro.qq.camera.sensor=3
 
 # wifi direct
 wifi.direct.interface=p2p0
