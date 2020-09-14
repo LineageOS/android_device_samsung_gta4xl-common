@@ -189,22 +189,7 @@ on post-fs-data
 # TEEGRIS service
     mkdir /data/vendor/tee 0700 system system
 
-# Exynos Data folder
-    mkdir /data/exynos 0771 root system
-    mkdir /data/exynos/log 0771 root system
-    mkdir /data/exynos/log/cbd 0771 root system
-    mkdir /data/exynos/log/dmd 0771 root system
-    mkdir /data/exynos/log/dump 0771 radio system
-    mkdir /data/exynos/log/rild 0771 root system
-    mkdir /data/exynos/log/sced 0771 root system
-    mkdir /data/exynos/log/slog 0771 system system
-    mkdir /data/exynos/log/vcd 0771 root system
-    mkdir /data/exynos/log/chub 0771 root system
-    mkdir /data/exynos/gnss 0771 system system
-    mkdir /data/exynos/gnss/gps 0771 system system
-
 # Log data folder
-    mkdir /data/exynos/log 0771 radio system
     mkdir /data/vendor 0771 root system
     mkdir /data/vendor/log 0771 root system
     mkdir /data/vendor/log/abox 0771 audioserver system

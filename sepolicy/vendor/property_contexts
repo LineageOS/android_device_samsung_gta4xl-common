@@ -1,10 +1,20 @@
 # property_contexts
 
+persist.rmnet.             u:object_r:persist_rmnet_prop:s0
+persist.data.df.           u:object_r:persist_data_df_prop:s0
+persist.data.wda.          u:object_r:persist_data_wda_prop:s0
+
 # CAMERA
 persist.vendor.sys.camera. u:object_r:vendor_camera_prop:s0
 
 # FACTORY
 ro.factory.factory_binary  u:object_r:vendor_factory_prop:s0
+
+# RADIO
+ro.radio.needcalibration   u:object_r:vendor_radio_prop:s0
+
+# WLAN
+vendor.wlan.               u:object_r:vendor_wlan_prop:s0
 
 # WLBTD
 vendor.wlbtd.              u:object_r:vendor_wlbtd_prop:s0

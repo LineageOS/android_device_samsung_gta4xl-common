@@ -103,9 +103,6 @@ on post-fs-data
     # sec_efs_file
     mkdir /efs/sec_efs 0775 radio system
 
-    # zram
-    mkdir /data/zram 0700 root root
-
     #BUS
     chown system radio /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min
     chown system radio /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/available_frequencies
@@ -127,20 +124,6 @@ on post-fs-data
     chmod 0664 /sys/class/input_booster/touchkey/level
     chmod 0664 /sys/class/input_booster/touchkey/freq
     chmod 0664 /sys/class/input_booster/touchkey/time
-
-    mkdir /data/log 0775 system log
-    mkdir /data/log/bt 0770 bluetooth bluetooth
-
-    mkdir /data/local/dsms 0710 dsms dsms
-    rm /data/local/dsms/preboot.log
-    write /data/local/dsms/preboot.log ""
-    chown dsms dsms /data/local/dsms/preboot.log
-    chmod 0620 /data/local/dsms/preboot.log
-
-    mkdir /data/misc/spqr 0770 system shell
-
-    #lpnetConfig AppSync
-    mkdir /data/misc/lpnet 0700 system system
 
     #MCPS
     #ARGOS with MCPS
@@ -188,21 +171,7 @@ on post-fs-data
     chown system system /sys/module/mcps/version
     chown system system /proc/mcps/mcps_dump
 
-    # [ Wi-Fi init
-    # Create directory for hostapd
-    mkdir /data/hostapd 0770 system wifi
-
-    # give system access to wpa_supplicant.conf for backup and restore
-    mkdir /data/misc/wifi 0770 wifi system
-    mkdir /data/misc/wifi_share_profile 0771 wifi system
-    mkdir /data/misc/wifi_hostapd 0771 wifi system    
-
-    mkdir /data/log/wifi/ 0775 system root
-    mkdir /data/misc/reboot 0700 system system
     chown system system /sys/kernel/ipv4/tcp_delack_seg
-
-    # Wi-Fi temporary log Directory for Android Global DE policy
-    mkdir /data/wifi/ 0770 system root
 
     # change owner background io bigdata node for hqm write
     chown system system /sys/fs/fsio/bgiostat/sec_stat
@@ -225,13 +194,6 @@ on post-fs-data
     chown system system /sys/class/mstldo/mst_drv/mfc
     chmod 0440 /sys/class/mstldo/mst_drv/mfc
 
-    # Downloadable Filter
-    mkdir /data/DownFilters       0775 system system
-    mkdir /data/DownFilters/Lib   0775 system system
-    mkdir /data/DownFilters/Lib64 0775 system system
-    mkdir /data/DownFilters/Res   0775 system system
-    mkdir /data/DownFilters/Tex   0775 system system
-
     # MST Check Support
     chown system system /sys/class/mstldo/mst_drv/support
     chmod 0444 /sys/class/mstldo/mst_drv/support
@@ -242,24 +204,9 @@ on post-fs-data
 
     # NFC KEY
     mkdir /data/vendor/nfc 0770 nfc nfc
-    mkdir /data/nfc_log 0750 nfc system
     copy /system/etc/nfc_key /data/nfc/Key
     chmod 660 /data/nfc/Key
     chown nfc nfc /data/nfc/Key
-
-    # Create all remaining /data root dirs so that they are made through init
-    # and get proper encryption policy installed
-    mkdir /data/backup 0700 system system
-    mkdir /data/ss 0700 system system
-
-    # TAD
-    mkdir /data/tad 0770 system system
-
-    # Samsung Pass
-    mkdir /data/.fido 0700 system system
-
-    # Samsung font
-    mkdir /data/app_fonts 0775 system system
 
     # super slow motion
     mkdir /data/vendor/mediacodec 0700 mediacodec mediacodec
