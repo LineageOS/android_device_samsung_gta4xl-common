@@ -1,0 +1,3 @@
+# netd.te
+
+allow netd sysfs_net_mtu_writable:file rw_file_perms;
