@@ -1,4 +1,4 @@
-# Samsung specific
+### SAMSUNG SPECIFIC
 ro.product_ship=true
 # Set csc support in OMX
 # If not set or set to 0, OMX will only use BT.601 colorspace.
@@ -7,8 +7,14 @@ ro.vendor.cscsupported=1
 ro.cmc.device_type=sd
 ro.cmc.version=2.0
 
-# camera
+### CAMERA
 ro.qq.camera.sensor=3
 
-# wifi direct
+### KEYSTORE
+ro.security.keystore.keytype=sak,gak
+
+### LOCKSCREEN
+lockscreen.rot_override=true
+
+### WIFI DIRECT
 wifi.direct.interface=p2p0
