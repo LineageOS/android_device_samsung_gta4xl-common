@@ -4,7 +4,7 @@ allow kernel self:capability mknod;
 
 r_dir_file(kernel, sysfs_sec_key);
 
-allow kernel device:dir { add_name write };
+allow kernel device:dir { add_name write remove_name };
 allow kernel device:chr_file { create setattr getattr };
 
 r_dir_file(kernel, efs_file);
