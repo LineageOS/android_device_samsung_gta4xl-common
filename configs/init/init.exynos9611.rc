@@ -498,7 +498,7 @@ on fs
     mount_all /vendor/etc/fstab.exynos9611 --early
     # We need to seperate mounting SEC_EFS partition from fstab file due to GSI image loading case
     wait /dev/block/platform/13520000.ufs/by-name/sec_efs
-    mount ext4 /dev/block/platform/13520000.ufs/by-name/sec_efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic
+    mount ext4 /dev/block/platform/13520000.ufs/by-name/sec_efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic,no_sehash_xattr
 
     restorecon_recursive /mnt/vendor/efs
     restorecon_recursive /mnt/vendor/cpefs
