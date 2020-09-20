@@ -8,8 +8,8 @@ init_daemon_domain(hal_drm_widevine);
 
 allow hal_drm_widevine hal_vendor_wvkprov_hwservice:hwservice_manager { add find };
 
-allow hal_drm_widevine mediadrm_vendor_data_file:dir { r_file_perms search };
-allow hal_drm_widevine mediadrm_vendor_data_file:file rw_file_perms;
+allow hal_drm_widevine mediadrm_vendor_data_file:dir create_dir_perms;
+allow hal_drm_widevine mediadrm_vendor_data_file:file create_file_perms;
 
 allow hal_drm_widevine secmem_device:chr_file rw_file_perms;
 

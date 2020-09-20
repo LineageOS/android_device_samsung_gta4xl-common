@@ -73,3 +73,6 @@
 
 /(vendor|system/vendor)/lib(64)?/libsensorlistener\.so                                              u:object_r:vendor_shimmed_lib:s0
 /(vendor|system/vendor)/lib/vndk/libstagefright_omx_utils\.so                                       u:object_r:vendor_shimmed_lib:s0
+
+/(vendor|system/vendor)/usr/idc(/.*)                                                                u:object_r:vendor_idc_file:s0
+/(vendor|system/vendor)/usr/keylayout(/.*)                                                          u:object_r:vendor_keylayout_file:s0
