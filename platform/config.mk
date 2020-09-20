@@ -20,6 +20,7 @@ PRODUCT_COPY_FILES += \
 
 ### KEYLAYOUT
 PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/config/idc/sec_e-pen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/sec_e-pen.idc \
     $(PLATFORM_PATH)/config/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl
 
 ### PUBLIC LIBRARIES
