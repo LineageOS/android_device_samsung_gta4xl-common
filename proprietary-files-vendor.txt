@@ -72,7 +72,7 @@ vendor/firmware/calliope_iva.bin
 # CAMERA
 vendor/etc/init/vendor.samsung.hardware.camera.provider@3.0-service.rc
 vendor/bin/hw/vendor.samsung.hardware.camera.provider@3.0-service
-vendor/lib/hw/camera.exynos9611.so
+vendor/lib/hw/camera.exynos9611.so|9f8fccfcd4506fd049185b1b01ae27518f958a2e
 vendor/lib/hw/vendor.samsung.hardware.camera.provider@3.0-impl.so
 vendor/lib/camera.device@1.0-impl.so
 vendor/lib/camera.device@3.2-impl.so
@@ -85,7 +85,7 @@ vendor/lib/vendor.samsung.camera.device@4.0-impl.so
 vendor/lib/vendor.samsung.hardware.camera.device@1.0.so
 vendor/lib/vendor.samsung.hardware.camera.device@4.0.so
 vendor/lib/vendor.samsung.hardware.camera.provider@3.0.so
-vendor/lib64/hw/camera.exynos9611.so
+vendor/lib64/hw/camera.exynos9611.so|95a7251921ab4dbc24ccf2df19a0f76782eee4f4
 vendor/lib64/hw/vendor.samsung.hardware.camera.provider@3.0-impl.so
 vendor/lib64/camera.device@1.0-impl.so
 vendor/lib64/camera.device@3.2-impl.so
@@ -244,7 +244,6 @@ vendor/firmware/fimc_is_rta.bin
 ### RIL
 vendor/bin/hw/rild
 vendor/bin/cbd
-vendor/lib/libaudio-ril.so
 vendor/lib/libmdf.so
 vendor/lib/libreference-ril.so
 vendor/lib/libril.so
@@ -279,7 +278,6 @@ vendor/lib64/libteecl.so
 vendor/lib64/libuuid.so
 
 # TEEGRIS_FIRMWARE
-vendor/tee/00000000-0000-0000-0000-000000000046
 vendor/tee/00000000-0000-0000-0000-00000000dead
 vendor/tee/00000000-0000-0000-0000-000000010081
 vendor/tee/00000000-0000-0000-0000-000000020081
