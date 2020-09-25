@@ -165,6 +165,8 @@ vendor/lib64/libkeymaster_helper_vendor.so
 
 # OMX
 vendor/etc/somxreg.conf
+vendor/lib/omx/libOMX.Exynos.AVC.Decoder.so
+vendor/lib/omx/libOMX.Exynos.AVC.Encoder.so
 vendor/lib/omx/libOMX.Exynos.HEVC.Decoder.so
 vendor/lib/omx/libOMX.Exynos.HEVC.Encoder.so
 vendor/lib/omx/libOMX.Exynos.MPEG4.Decoder.so
@@ -199,6 +201,8 @@ vendor/lib/libsomxwmv7d.so
 vendor/lib/libsomxwmv8d.so
 vendor/lib/libstagefright_omx_vendor.so
 # FIXME END
+vendor/lib64/omx/libOMX.Exynos.AVC.Decoder.so
+vendor/lib64/omx/libOMX.Exynos.AVC.Encoder.so
 vendor/lib64/omx/libOMX.Exynos.HEVC.Decoder.so
 vendor/lib64/omx/libOMX.Exynos.HEVC.Encoder.so
 vendor/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so
@@ -230,12 +234,6 @@ vendor/lib64/libsomxwmad.so
 vendor/lib64/libsomxwmv7d.so
 vendor/lib64/libsomxwmv8d.so
 # FIXME END
-
-# OMX (AVC) - from beyond1lte - G973FXXU8CTG4
-vendor/lib/omx/libOMX.Exynos.AVC.Decoder.so|8d83a2fa5fdb9efae8ae2507e792855c12cde3fd
-vendor/lib/omx/libOMX.Exynos.AVC.Encoder.so|303a97667f1ebf00079f22d8936593a9de089dca
-vendor/lib64/omx/libOMX.Exynos.AVC.Decoder.so|0727d756d743163a27827a7bf9f833b5109b8cd3
-vendor/lib64/omx/libOMX.Exynos.AVC.Encoder.so|6af1d9c45c1130d3718608879089f90ac4279443
 
 ### OMX_FIRMWARE
 vendor/firmware/fimc_is_lib.bin
