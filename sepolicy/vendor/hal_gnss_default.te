@@ -1,0 +1,3 @@
+# hal_gnss_default.te
+
+allow hal_gnss_default gpsd:unix_stream_socket connectto;

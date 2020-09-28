@@ -14,6 +14,9 @@
 # Camera
 /dev/m2m1shot_scaler0                        u:object_r:m2m1shot_device:s0
 
+# GPS
+/dev/gnss_ipc                                u:object_r:gnss_device:s0
+
 # Graphics
 /dev/mali[0-9]                               u:object_r:gpu_device:s0
 /dev/g2d                                     u:object_r:graphics_device:s0
@@ -49,6 +52,9 @@
 /sys/devices/platform/11980000.contexthub(/.*)/buffer/length  u:object_r:sysfs_sensors_writable:s0
 /sys/devices/platform/11980000.contexthub(/.*)                u:object_r:sysfs_iio:s0
 /sys/devices/platform/11c30000.adc(/.*)                       u:object_r:sysfs_iio:s0
+
+# GPS
+/sys/devices/soc0/machine                                     u:object_r:sysfs_sec_gps:s0
 
 ### VENDOR
 /(vendor|system/vendor)/bin/argosd           u:object_r:argosd_exec:s0
