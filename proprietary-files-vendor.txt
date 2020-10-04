@@ -240,26 +240,8 @@ vendor/firmware/fimc_is_lib.bin
 vendor/firmware/fimc_is_rta.bin
 
 ### RIL
-vendor/bin/hw/rild
-vendor/bin/cbd
-vendor/lib/libmdf.so
-vendor/lib/libreference-ril.so
-vendor/lib/libril.so
-vendor/lib/librilutils.so
-vendor/lib/libsecure_storage.so
 vendor/lib/libvndsecril-client.so
-vendor/lib/vendor.samsung.hardware.radio.bridge@2.0.so
-vendor/lib/vendor.samsung.hardware.radio@2.0.so
-vendor/lib/vendor.samsung.hardware.radio@2.1.so
-vendor/lib64/libmdf.so
-vendor/lib64/libreference-ril.so
-vendor/lib64/libril.so
-vendor/lib64/librilutils.so
-vendor/lib64/libsecure_storage.so
 vendor/lib64/libvndsecril-client.so
-vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
-vendor/lib64/vendor.samsung.hardware.radio@2.0.so
-vendor/lib64/vendor.samsung.hardware.radio@2.1.so
 
 ### SECNATIVE
 vendor/lib/libsecnativefeature.so
