@@ -1,3 +1,5 @@
 # netd.te
 
 allow netd sysfs_net_mtu_writable:file rw_file_perms;
+
+allow netd self:capability sys_module;
