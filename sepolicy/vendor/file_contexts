@@ -50,10 +50,8 @@
 /sys/devices/virtual/net(/.*)/mtu                             u:object_r:sysfs_net_mtu_writable:s0
 
 # Sensors
-/sys/devices/platform/11980000.contexthub(/.*)/buffer/enable  u:object_r:sysfs_sensors_writable:s0
-/sys/devices/platform/11980000.contexthub(/.*)/buffer/length  u:object_r:sysfs_sensors_writable:s0
-/sys/devices/platform/11980000.contexthub(/.*)                u:object_r:sysfs_iio:s0
-/sys/devices/platform/11c30000.adc(/.*)                       u:object_r:sysfs_iio:s0
+/sys/devices/platform/11980000.contexthub(/.*)                u:object_r:sysfs_sensors_writable:s0
+/sys/devices/platform/11c30000.adc(/.*)                       u:object_r:sysfs_sensors_writable:s0
 
 # GPS
 /sys/devices/soc0/machine                                     u:object_r:sysfs_sec_gps:s0
