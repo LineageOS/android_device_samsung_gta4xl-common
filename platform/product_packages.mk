@@ -119,7 +119,8 @@ PRODUCT_PACKAGES += \
 
 ### POWER
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.samsung-libperfmgr
+    android.hardware.power@1.3-service.samsung-libperfmgr \
+    libperfmgr.vendor
 
 ### PROTOBUF
 PRODUCT_PACKAGES += \
