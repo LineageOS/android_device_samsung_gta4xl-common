@@ -6,6 +6,8 @@
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
 
 ### DEV
+/dev/block/platform/.+/by-name/boot          u:object_r:boot_block_device:s0
+/dev/block/platform/.+/by-name/recovery      u:object_r:recovery_block_device:s0
 /dev/block/platform/.+/by-name/cpefs         u:object_r:cpefs_block_device:s0
 
 # Bluetooth
