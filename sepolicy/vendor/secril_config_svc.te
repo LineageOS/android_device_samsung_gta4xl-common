@@ -1,0 +1,3 @@
+# secril_config_svc.te
+
+allow secril_config_svc proc_simslot_count:file r_file_perms;
