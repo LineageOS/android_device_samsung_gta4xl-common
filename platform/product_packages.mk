@@ -145,8 +145,7 @@ PRODUCT_PACKAGES += \
 
 ### SOUNDTRIGGER
 PRODUCT_PACKAGES += \
-    android.hardware.soundtrigger@2.2-impl \
-    android.hardware.soundtrigger@2.0-service
+    android.hardware.soundtrigger@2.0-impl
 
 ### THERMAL
 PRODUCT_PACKAGES += \
