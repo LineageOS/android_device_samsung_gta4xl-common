@@ -1,4 +1,4 @@
-# Common proprietary files - from Samsung package version P610XXU2BTI3, unless pinned
+# Common proprietary files - from Samsung package version P610XXU2BTJ5, unless pinned
 
 ### BLUETOOTH
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
