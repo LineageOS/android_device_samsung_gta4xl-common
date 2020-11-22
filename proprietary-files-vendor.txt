@@ -344,7 +344,6 @@ vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 vendor/bin/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service.rc
-vendor/lib/liboemcrypto.so
 vendor/lib64/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0.so
 
 # WIFI
