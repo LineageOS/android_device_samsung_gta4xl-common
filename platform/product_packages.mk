@@ -87,7 +87,6 @@ PRODUCT_PACKAGES += \
 
 ### MEDIA
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-impl:32 \
     android.hardware.media.omx@1.0-service
 
 ### MEMTRACK
@@ -97,20 +96,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
-
-### OMX
-PRODUCT_PACKAGES += \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVdecHevc \
-    libOmxVenc \
-    libc2dcolorconvert \
-    libmm-omxcore \
-    libstagefrighthw
 
 ### POWER
 PRODUCT_PACKAGES += \
@@ -168,5 +153,4 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
     WifiOverlay \
-    wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant
