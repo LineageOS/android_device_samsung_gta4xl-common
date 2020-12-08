@@ -70,8 +70,8 @@ PRODUCT_PACKAGES += \
 
 ### HEALTH
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
+    android.hardware.health@2.1-impl:64 \
+    android.hardware.health@2.1-service
 
 ### HIDL
 PRODUCT_PACKAGES += \
