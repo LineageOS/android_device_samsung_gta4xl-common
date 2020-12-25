@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-# Map KEY_HOME to KEY_POWER for DT2W
-key 172 POWER
+# DT2W
+key 143 POWER
