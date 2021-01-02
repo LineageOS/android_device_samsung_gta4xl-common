@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2020-2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -151,7 +151,8 @@ TARGET_KEYMASTER_VARIANT := samsung
 ### SHIMS
 TARGET_LD_SHIM_LIBS += \
     /vendor/lib/vndk/libstagefright_omx_utils.so|libshim_stagefright_foundation.so \
-    /vendor/lib/libsensorlistener.so|libshim_sensorndkbridge.so
+    /vendor/lib/libsensorlistener.so|libshim_sensorndkbridge.so \
+    /vendor/lib64/libsensorlistener.so|libshim_sensorndkbridge.so
 
 ### SEPOLICY
 include device/lineage/sepolicy/exynos/sepolicy.mk
