@@ -63,7 +63,7 @@ function blob_fixup() {
         vendor/lib/vndk/libstagefright_omx_utils.so)
             "${PATCHELF}" --add-needed libshim_stagefright_foundation.so "${2}"
             ;;
-        vendor/lib/libsensorlistener.so)
+        vendor/lib*/libsensorlistener.so)
             "${PATCHELF}" --add-needed libshim_sensorndkbridge.so "${2}"
             ;;
     esac
