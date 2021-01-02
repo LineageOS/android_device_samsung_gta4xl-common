@@ -1,61 +1,6 @@
 {
     "Nodes": [
         {
-            "Name": "CPULittleClusterMaxFreq",
-            "Path": "/dev/cluster0_freq_max",
-            "Values": [
-                "0x001a94b0",
-                "0x00183350",
-                "0x00163780",
-                "0x0013d620"
-            ],
-            "HoldFd": true,
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "CPULittleClusterMinFreq",
-            "Path": "/dev/cluster0_freq_min",
-            "Values": [
-                "0x001a94b0",
-                "0x00183350",
-                "0x0013d620",
-                "0x0011a788",
-                "0x000c4c70",
-                "0x00000000"
-            ],
-            "HoldFd": true,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "CPUBigClusterMaxFreq",
-            "Path": "/dev/cluster1_freq_max",
-            "Values": [
-                "0x00234f10",
-                "0x001cf610",
-                "0x00183350",
-                "0x00156c60",
-                "0x0012a570"
-            ],
-            "HoldFd": true,
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "CPUBigClusterMinFreq",
-            "Path": "/dev/cluster1_freq_min",
-            "Values": [
-                "0x00234f10",
-                "0x00183350",
-                "0x00156c60",
-                "0x0012a570",
-                "0x000ce4c8",
-                "0x00000000"
-            ],
-            "HoldFd": true,
-            "ResetOnInit": true
-        },
-        {
             "Name": "TASchedtuneBoost",
             "Path": "/dev/stune/top-app/schedtune.boost",
             "Values": [
@@ -146,69 +91,15 @@
     "Actions": [
         {
             "PowerHint": "INTERACTION",
-            "Node": "CPUBigClusterMinFreq",
-            "Duration": 0,
-            "Value": "0x000ce4c8"
-        },
-        {
-            "PowerHint": "INTERACTION",
-            "Node": "CPULittleClusterMinFreq",
-            "Duration": 0,
-            "Value": "0x000c4c70"
-        },
-        {
-            "PowerHint": "INTERACTION",
             "Node": "TASchedtuneBoost",
             "Duration": 0,
             "Value": "70"
         },
         {
             "PowerHint": "LAUNCH",
-            "Node": "CPUBigClusterMaxFreq",
-            "Duration": 5000,
-            "Value": "0x00234f10"
-        },
-        {
-            "PowerHint": "LAUNCH",
-            "Node": "CPUBigClusterMinFreq",
-            "Duration": 5000,
-            "Value": "0x00234f10"
-        },
-        {
-            "PowerHint": "LAUNCH",
-            "Node": "CPULittleClusterMinFreq",
-            "Duration": 5000,
-            "Value": "0x001a94b0"
-        },
-        {
-            "PowerHint": "LAUNCH",
             "Node": "PMQoSCpuDmaLatency",
             "Duration": 5000,
             "Value": "0x0000002c"
-        },
-        {
-            "PowerHint": "CAMERA_LAUNCH",
-            "Node": "CPUBigClusterMaxFreq",
-            "Duration": 1000,
-            "Value": "0x00234f10"
-        },
-        {
-            "PowerHint": "CAMERA_LAUNCH",
-            "Node": "CPUBigClusterMinFreq",
-            "Duration": 1000,
-            "Value": "0x00234f10"
-        },
-        {
-            "PowerHint": "CAMERA_LAUNCH",
-            "Node": "CPULittleClusterMaxFreq",
-            "Duration": 1000,
-            "Value": "0x001a94b0"
-        },
-        {
-            "PowerHint": "CAMERA_LAUNCH",
-            "Node": "CPULittleClusterMinFreq",
-            "Duration": 1000,
-            "Value": "0x001a94b0"
         },
         {
             "PowerHint": "CAMERA_LAUNCH",
@@ -221,36 +112,6 @@
             "Node": "PowerHALMainState",
             "Duration": 0,
             "Value": "CAMERA_STREAMING"
-        },
-        {
-            "PowerHint": "CAMERA_STREAMING",
-            "Node": "CPUBigClusterMaxFreq",
-            "Duration": 0,
-            "Value": "0x001cf610"
-        },
-        {
-            "PowerHint": "CAMERA_SHOT",
-            "Node": "CPUBigClusterMaxFreq",
-            "Duration": 1000,
-            "Value": "0x00234f10"
-        },
-        {
-            "PowerHint": "CAMERA_SHOT",
-            "Node": "CPUBigClusterMinFreq",
-            "Duration": 1000,
-            "Value": "0x00234f10"
-        },
-        {
-            "PowerHint": "CAMERA_SHOT",
-            "Node": "CPULittleClusterMaxFreq",
-            "Duration": 1000,
-            "Value": "0x001a94b0"
-        },
-        {
-            "PowerHint": "CAMERA_SHOT",
-            "Node": "CPULittleClusterMinFreq",
-            "Duration": 1000,
-            "Value": "0x001a94b0"
         },
         {
             "PowerHint": "CAMERA_SHOT",
@@ -281,18 +142,6 @@
             "Node": "PowerHALMainState",
             "Duration": 0,
             "Value": "SUSTAINED_PERFORMANCE"
-        },
-        {
-            "PowerHint": "SUSTAINED_PERFORMANCE",
-            "Node": "CPUBigClusterMaxFreq",
-            "Duration": 0,
-            "Value": "0x00183350"
-        },
-        {
-            "PowerHint": "SUSTAINED_PERFORMANCE",
-            "Node": "CPULittleClusterMaxFreq",
-            "Duration": 0,
-            "Value": "0x0013d620"
         },
         {
             "PowerHint": "VR_MODE",
