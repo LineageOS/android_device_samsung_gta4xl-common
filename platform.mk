@@ -32,8 +32,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(PLATFORM_PATH) \
+    hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/samsung/hidl/power-libperfmgr
+    hardware/samsung/aidl/power-libperfmgr
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay
