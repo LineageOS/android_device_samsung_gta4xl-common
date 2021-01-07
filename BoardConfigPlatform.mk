@@ -220,10 +220,6 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 # external/wpa_supplicant_8/Android.mk
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
-# frameworks/opt/net/wifi/libwifi_hal/Android.mk
-# hardware/samsung/wifiloader/Android.mk
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-
 ### RIL
 # Use stock RIL stack
 ENABLE_VENDOR_RIL_SERVICE := true
