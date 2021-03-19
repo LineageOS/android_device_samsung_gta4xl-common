@@ -29,7 +29,6 @@ write_headers "gta4xlwifi gta4xl"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
-write_makefiles "${MY_DIR}/proprietary-files-vendor.txt" true
 
 # Finish
 write_footers
@@ -43,7 +42,6 @@ if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
 
     # The standard device blobs
     write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files.txt" true
-    write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files-vendor.txt" true
 
     # Finish
     write_footers

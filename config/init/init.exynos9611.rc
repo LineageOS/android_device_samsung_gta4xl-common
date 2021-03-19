@@ -44,8 +44,6 @@ on init
     write /proc/sys/net/ipv4/tcp_mem "44259 59012 88518"
     write /proc/sys/net/ipv4/udp_mem "88518 118025 177036"
 
-    write /sys/module/scsc_wlan/parameters/hip4_smapper_enable 1
-
     write /sys/class/net/rmnet0/queues/rx-0/rps_cpus fe
     write /sys/class/net/rmnet0/queues/rx-0/rps_flow_cnt 64
     write /sys/class/net/rmnet1/queues/rx-0/rps_cpus fe
@@ -155,9 +153,6 @@ on post-fs-data
     write /dev/freezer/frozen/freezer.state FROZEN
     write /dev/freezer/thaw/freezer.state THAWED
 
-# Create mb_po folder for Activation TA
-    mkdir /efs/mb_po 0700 system system
-
 # MARs for freecess
     chown system system /dev/freezer
     chown system system /dev/freezer/frozen
@@ -186,6 +181,17 @@ on post-fs-data
     chmod 0644 /dev/freezer/olaf/cgroup.procs
     chmod 0644 /dev/freezer/olaf/freezer.state
 
+# Slowdown freezer
+    mkdir /dev/freezer/abnormal
+    write /dev/freezer/abnormal/freezer.state THAWED
+    chown system system /dev/freezer/abnormal
+    chown system system /dev/freezer/abnormal/tasks
+    chown system system /dev/freezer/abnormal/cgroup.procs
+    chown system system /dev/freezer/abnormal/freezer.state
+    chmod 0644 /dev/freezer/abnormal/tasks
+    chmod 0644 /dev/freezer/abnormal/cgroup.procs
+    chmod 0644 /dev/freezer/abnormal/freezer.state
+
 # TEEGRIS service
     mkdir /data/vendor/tee 0700 system system
 
@@ -196,8 +202,15 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
+# SensorHub Log folder
+    mkdir /data/vendor/sensorhub/ 0771 root system
+
+# swap
+    swapon_all /vendor/etc/fstab.exynos9611
+
 # Permissions Camera
     mkdir /data/vendor/camera 0770 cameraserver system
+    chown cameraserver cameraserver /sys/kernel/mm/vmscan/mem_boost_mode
     chown system radio /sys/class/camera/rear/rear_camfw
     chown system radio /sys/class/camera/rear/rear_camfw_full
     chown system radio /sys/class/camera/rear/rear_checkfw_user
@@ -262,7 +275,7 @@ on post-fs-data
     chown cameraserver cameraserver /sys/class/camera/rear/rear4_sensorid
     chown system radio /sys/class/camera/rear/rear4_moduleid
     chown system radio /sys/class/camera/rear/rear4_tilt
-    
+
 # Permission for flashlight control for HAL3.3
 # The Istor espresso board does not have the flash led h/w, So the below permission line are blocked.
 # If you want to test the flashlight in universal board which have the flash led h/w, Enable the below blocked lines.
@@ -283,6 +296,10 @@ on post-fs-data
     setprop ro.bt.bdaddr_path "/mnt/vendor/efs/bluetooth/bt_addr"
     chown bluetooth bluetooth ro.bt.bdaddr_path
 
+# Permissions for GNSS
+    chown root system /dev/ttySAC6
+    chmod 0660 /dev/ttySAC6
+
 # for BT MAC address
     mkdir /mnt/vendor/efs/bluetooth 0770 system bluetooth
 # if already exist
@@ -298,7 +315,14 @@ on post-fs-data
     chown wifi root /mnt/vendor/efs/wifi/.mac.cob
     chmod 0664 /mnt/vendor/efs/wifi/.mac.cob
 
-    write /sys/module/scsc_mx/parameters/disable_recovery_handling 0
+    # write /sys/module/scsc_mx/parameters/disable_recovery_handling 0
+
+# Samsung Pay
+#    mkdir /efs/pfw_data 0760 vendor_spay vendor_spay
+
+# MST/NFC Switch
+#    chown vendor_spay system /dev/mst_ctrl
+#    chmod 0660 /dev/mst_ctrl
 
 on boot
 # SSWAP
@@ -419,9 +443,9 @@ on boot
     chmod 0664 /dev/cpuset/restricted/cpus
     chmod 0664 /dev/cpuset/cpus
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-6
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/background/cpus 0-7
+    write /dev/cpuset/system-background/cpus 0-7
     write /dev/cpuset/restricted/cpus 0-3
 
     # Cstate node
@@ -486,11 +510,10 @@ on boot
 
 on late-fs
     wait_for_prop hwservicemanager.ready true
-    mount_all /vendor/etc/fstab.${ro.hardware} --late
+    mount_all /vendor/etc/fstab.exynos9611 --late
 
 on fs
-    mount_all /vendor/etc/fstab.${ro.hardware} --early
-
+    mount_all /vendor/etc/fstab.exynos9611 --early
     # We need to seperate mounting SEC_EFS partition from fstab file due to GSI image loading case
     wait /dev/block/platform/13520000.ufs/by-name/sec_efs
     mount ext4 /dev/block/platform/13520000.ufs/by-name/sec_efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic
@@ -527,6 +550,7 @@ on fs
     chown system radio /sys/class/lcd/panel/lcd_type
     chown system system /sys/class/lcd/panel/lux
     chown system radio /sys/class/lcd/panel/conn_det
+    chown system radio /sys/class/lcd/panel/abnormal_temperature
 
 # Permissions for MDNIE
     chown system media_rw /sys/class/mdnie/mdnie/mode
@@ -595,7 +619,6 @@ on fs
     chown system radio /sys/class/sensors/light_sensor/name
     chown system system /sys/class/sensors/light_sensor/dhr_sensor_info
     chown system radio /sys/class/sensors/light_sensor/light_circle
-    chown system radio /sys/class/sensors/light_sensor/fac_fstate
 
 # Proximity_sensor
     chown system radio /sys/class/sensors/proximity_sensor/state
@@ -612,6 +635,9 @@ on fs
     chown system radio /sys/class/sensors/proximity_sensor/prox_offset_pass
     chown system radio /sys/class/sensors/proximity_sensor/prox_trim
     chown system system /sys/class/sensors/proximity_sensor/dhr_sensor_info
+
+# Flush
+    chown system radio /sys/class/sensors/sensor_dev/flush
 
 # Permissions for Grip Sensor
     chown system radio /sys/class/sensors/grip_sensor/name
@@ -676,6 +702,7 @@ on fs
     chown system radio /sys/class/sensors/grip_sensor/grip_baseline_2ch
     chown system radio /sys/class/sensors/grip_sensor/grip_raw_2ch
     chown system radio /sys/class/sensors/grip_sensor/grip_check_2ch
+    chown system radio /sys/class/sensors/grip_sensor/grip_register_recover
 
 # WIFI Grip sensor
     chown system radio /sys/class/sensors/grip_sensor_wifi/name
@@ -724,6 +751,7 @@ on fs
     chown system radio /sys/class/sensors/grip_sensor_wifi/grip_reg_rw
     chown system radio /sys/class/sensors/grip_sensor_wifi/grip_crc_check
     chown system radio /sys/class/sensors/grip_sensor_wifi/grip_sw_reset_ready
+    chown system radio /sys/class/sensors/grip_sensor_wifi/grip_register_recover
 
 # Barometer_sensor
     chown system radio /sys/class/sensors/barometer_sensor/sea_level_pressure
@@ -742,6 +770,9 @@ on fs
     chown system radio /sys/class/sensors/ssp_sensor/mcu_update
     chown system radio /sys/class/sensors/ssp_sensor/mcu_sleep_test
     chown system radio /sys/class/sensors/ssp_sensor/sensor_dump
+    chown system radio /sys/class/sensors/ssp_sensor/hall_ic
+    chown system radio /sys/class/sensors/ssp_sensor/sensor_spec
+    chown system radio /sys/class/sensors/ssp_sensor/scontext_list
 
 # Sensorhub IIO
     chown system radio /sys/class/sensors/ssp_sensor/ssp_flush
@@ -750,8 +781,8 @@ on fs
     chown system system /dev/batch_io
 
 # Permissions for  LSI NFC
-    chmod 0660 /dev/sec-nfc
-    chown nfc nfc /dev/sec-nfc
+#    chmod 0660 /dev/sec-nfc
+#    chown nfc nfc /dev/sec-nfc
 
 # Diag-daemon
     mkdir /efs/cpdebug 0771 radio system
@@ -800,6 +831,14 @@ on fs
     chown system radio /sys/class/audio/earjack/state
     chown system radio /sys/class/audio/earjack/mic_adc
 
+    chmod 0660 /sys/kernel/debug/audio/log
+    chown audioserver system /sys/kernel/debug/audio/log
+    chmod 0660 /sys/kernel/debug/audio/log_enable
+    chown audioserver system /sys/kernel/debug/audio/log_enable
+    chmod 0660 /sys/kernel/debug/audio/bootlog
+    chown audioserver system /sys/kernel/debug/audio/bootlog
+    chmod 0660 /sys/kernel/debug/audio/bootlog_enable
+    chown audioserver system /sys/kernel/debug/audio/bootlog_enable
 # TI Amp Calibration and Factory test
     chown system audio /sys/class/tas25xx/calib/calibration
     chown system audio /sys/class/tas25xx/calib/cstatus
@@ -823,33 +862,12 @@ on fs
     chmod 0660 /efs/tas25xx/calib_re_r
     chmod 0660 /efs/tas25xx/amb_temp_r
 
-    chmod 0660 /sys/kernel/debug/audio/log
-    chown audioserver system /sys/kernel/debug/audio/log
-    chmod 0660 /sys/kernel/debug/audio/log_enable
-    chown audioserver system /sys/kernel/debug/audio/log_enable
-    chmod 0660 /sys/kernel/debug/audio/bootlog
-    chown audioserver system /sys/kernel/debug/audio/bootlog
-    chmod 0660 /sys/kernel/debug/audio/bootlog_enable
-    chown audioserver system /sys/kernel/debug/audio/bootlog_enable
-
 #dbmd
     chmod 0660 /dev/dbmdx-1
     chown system audio /dev/dbmdx-1
 
-# ARGOSD network_throughput
-    chown system system /dev/network_throughput
-
-# GPIO
-    chown root system /sys/class/secgpio_check/secgpio_check_all/check_requested_gpio
-
 #load ecd firmware
     write /proc/ecd/load_firmware 1
-
-# ARGOSD
-service argos-daemon /vendor/bin/argosd
-    class main
-    user system
-    group system radio
 
 # faced
 service faced /system/bin/faced
@@ -935,9 +953,6 @@ service iprenew_bt-pan /vendor/bin/dhcpcd -n
         disabled
         oneshot
 
-on post-fs-data
-    swapon_all /vendor/etc/fstab.exynos9611
-
 # Pageboostd
 on property:sys.boot_completed=1
     start pageboostd
@@ -948,3 +963,11 @@ service pageboostd /system/bin/pageboostd
     group system mount radio net_bt sdcard_rw shell media media_rw
     socket pageboostd seqpacket 0660 system system
     disabled
+
+# sensorhub fw
+on post-fs
+    chmod 0770 /spu/sensorhub
+    chmod 0660 /spu/sensorhub/shub_spu.bin
+    chown root system /spu/sensorhub
+    chown root system /spu/sensorhub/shub_spu.bin
+    write /sys/devices/platform/11980000.contexthub/poweron 1
