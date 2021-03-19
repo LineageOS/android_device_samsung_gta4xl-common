@@ -80,7 +80,8 @@ PRODUCT_PACKAGES += \
 
 ### KEYMASTER
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0-service.samsung
+    android.hardware.keymaster@4.0-service.samsung \
+    libkeymaster4_1support.vendor:64
 
 ### LIGHT
 PRODUCT_PACKAGES += \
@@ -114,15 +115,13 @@ PRODUCT_PACKAGES += \
 
 ### SENSORS
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.samsung:64 \
-    android.hardware.sensors@1.0-service
+    android.hardware.sensors@2.1-service.samsung-multihal
 
 PRODUCT_PACKAGES += \
     libsensorndkbridge
 
 ### SHIMS
 PRODUCT_PACKAGES += \
-    libshim_stagefright_foundation \
     libshim_sensorndkbridge
 
 ### SOUNDTRIGGER
