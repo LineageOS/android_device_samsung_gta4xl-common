@@ -6,5 +6,7 @@ type persist_data_wda_prop, property_type;
 
 type vendor_camera_prop, property_type;
 type vendor_factory_prop, property_type;
+type vendor_hwc_prop, property_type;
+type vendor_sensors_prop, property_type;
 type vendor_wlan_prop, property_type;
 type vendor_wlbtd_prop, property_type;
