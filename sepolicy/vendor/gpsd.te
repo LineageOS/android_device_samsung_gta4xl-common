@@ -9,3 +9,5 @@ allow gpsd self:capability2 block_suspend;
 
 allow gpsd bt_device:chr_file rw_file_perms;
 allow gpsd gnss_device:chr_file rw_file_perms;
+
+allow gpsd gpsd_exec:file execute_no_trans;
