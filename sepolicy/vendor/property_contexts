@@ -10,8 +10,14 @@ persist.vendor.sys.camera. u:object_r:vendor_camera_prop:s0
 # FACTORY
 ro.factory.factory_binary  u:object_r:vendor_factory_prop:s0
 
+# HWC
+hwc.exynos.vsync_mode      u:object_r:vendor_hwc_prop:s0
+
 # RADIO
 ro.radio.needcalibration   u:object_r:vendor_radio_prop:s0
+
+# SENSORS
+persist.sns.camera_light   u:object_r:vendor_sensors_prop:s0
 
 # WLAN
 vendor.wlan.               u:object_r:vendor_wlan_prop:s0
