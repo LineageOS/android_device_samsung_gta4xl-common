@@ -20,6 +20,9 @@
 # Graphics
 /dev/mali[0-9]                               u:object_r:gpu_device:s0
 /dev/g2d                                     u:object_r:graphics_device:s0
+/sys/devices/platform/[a-f0-9]+.mfc0/video4linux/video[0-9]+/name(/.*)?             u:object_r:sysfs_v4l:s0
+/sys/devices/platform/[a-f0-9]+.smfc/video4linux/video[0-9]+/name(/.*)?             u:object_r:sysfs_v4l:s0
+/sys/devices/platform/[a-f0-9]+.fimc_is_sensor/video4linux/video[0-9]+/name(/.*)?   u:object_r:sysfs_v4l:s0
 
 # Secmem
 /dev/s5p-smem                                u:object_r:secmem_device:s0
