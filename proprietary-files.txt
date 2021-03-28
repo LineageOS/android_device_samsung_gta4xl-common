@@ -239,6 +239,7 @@ vendor/lib/libwvhidl.so
 ### WIFI
 vendor/bin/hw/macloader
 vendor/bin/wlbtd
+vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_slsi.rc
 vendor/etc/wifi/hydra_config.sdb
 vendor/etc/wifi/indoorchannel.info
