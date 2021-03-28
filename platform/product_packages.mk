@@ -102,11 +102,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.3-service.samsung-libperfmgr \
     libperfmgr.vendor
 
-### PROTOBUF
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-vendorcompat \
-    libprotobuf-cpp-lite-vendorcompat
-
 ### RENDERSCRIPT
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
