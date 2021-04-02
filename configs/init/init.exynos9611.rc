@@ -2,7 +2,6 @@ on early-init
     mkdir /mnt/vendor/efs 0771 radio system
     mkdir /mnt/vendor/cpefs 0771 radio system
     mkdir /mnt/vendor/persist 0771 system system
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 on init
     # Set permissions for persist partition
@@ -272,9 +271,6 @@ on post-fs-data
     chown system system /sys/devices/svc/Camera/SVC_rear_module
     chown system system /sys/devices/svc/Camera/SVC_front_module
 
-    chmod 0755 /sys/kernel/debug/tracing
-    restorecon /sys/kernel/debug/tracing/trace_marker
-
 # HWC data
     mkdir /data/vendor/log/hwc 0771 system graphics
 
@@ -316,14 +312,6 @@ on boot
 
     write /proc/sys/vm/min_free_order_shift 4
 
-    # Allow to access debugfs for system:system
-    chmod 0755 /sys/kernel/debug
-    chown system system /sys/kernel/debug
-
-    # Set up kernel tracing, but disable it by default
-    chmod 0222 /sys/kernel/debug/tracing/trace_marker
-    write /sys/kernel/debug/tracing/tracing_on 0
-
     # Permissions for NAD
     symlink /dev/block/platform/13520000.ufs/by-name/nad_refer /dev/block/NAD_REFER
 
@@ -358,7 +346,6 @@ on boot
     chown audioserver system /sys/devices/platform/14a50000.abox/0.abox_debug/gpr
     chown audioserver system /sys/devices/platform/14a50000.abox/0.abox_debug/calliope_sram
     chown audioserver system /sys/devices/platform/14a50000.abox/0.abox_debug/calliope_dram
-    chown audioserver system /sys/kernel/debug/abox/log-00
 
 # BarTender
     mkdir /dev/cpuctl/bg_cached
@@ -839,14 +826,6 @@ on fs
     chown system audio /sys/class/cirrus/cirrus_bd/over_temp_count_left
     chown system audio /sys/class/cirrus/cirrus_bd/over_temp_count_right
 
-    chmod 0660 /sys/kernel/debug/audio/log
-    chown audioserver system /sys/kernel/debug/audio/log
-    chmod 0660 /sys/kernel/debug/audio/log_enable
-    chown audioserver system /sys/kernel/debug/audio/log_enable
-    chmod 0660 /sys/kernel/debug/audio/bootlog
-    chown audioserver system /sys/kernel/debug/audio/bootlog
-    chmod 0660 /sys/kernel/debug/audio/bootlog_enable
-    chown audioserver system /sys/kernel/debug/audio/bootlog_enable
 # TI Amp Calibration and Factory test
     chown system audio /sys/class/tas25xx/calib/calibration
     chown system audio /sys/class/tas25xx/calib/cstatus
