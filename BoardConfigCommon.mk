@@ -15,8 +15,6 @@
 
 COMMON_PATH := device/samsung/gta4xl-common
 
-BUILD_BROKEN_DUP_RULES := true
-
 ## Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
