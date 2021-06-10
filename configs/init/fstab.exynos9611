@@ -4,8 +4,6 @@ vendor                                                  /vendor                 
 product                                                 /product                ext4    ro,errors=panic         wait,logical,first_stage_mount
 odm                                                     /odm                    ext4    ro,errors=panic         wait,logical,first_stage_mount
 
-/dev/block/platform/13520000.ufs/by-name/prism          /prism                  ext4    ro,barrier=1            nofail,first_stage_mount
-/dev/block/platform/13520000.ufs/by-name/optics         /optics                 ext4    ro,barrier=1            nofail,first_stage_mount
 /dev/block/platform/13520000.ufs/by-name/metadata       /metadata               ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,first_stage_mount,formattable,check
 
 /dev/block/platform/13520000.ufs/by-name/boot           /boot                   emmc    defaults                                                                                recoveryonly
