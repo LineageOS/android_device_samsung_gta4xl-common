@@ -18,7 +18,13 @@ type debugfs_ion_dma, fs_type, debugfs_type;
 
 # efs types
 type cpdebug_efs_file, fs_type;
+type dsms_efs_file, fs_type;
+type gatekeeper_efs_file, fs_type;
+type knoxai_efs_file, fs_type;
+type kpm_efs_file, fs_type;
 type mb_po_efs_file, fs_type;
+type pdp_efs_file, fs_type;
+type ssm_efs_file, fs_type;
 
 # proc types
 type proc_simslot_count, fs_type, proc_type;
