@@ -1,9 +1,3 @@
-# /dqmdbg /omr /optics /prism
-type omr_file, file_type;
-type dqmdbg_file, file_type;
-type optics_file, file_type;
-type prism_file, file_type;
-
 # data types
 type camera_vendor_data_file, file_type, data_file_type;
 type display_vendor_data_file, file_type, data_file_type;
