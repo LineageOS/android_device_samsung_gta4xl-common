@@ -211,18 +211,6 @@ on post-fs-data
     chmod 660 /data/nfc/Key
     chown nfc nfc /data/nfc/Key
 
-    # super slow motion
-    mkdir /data/vendor/mediacodec 0700 mediacodec mediacodec
-    mkdir /data/vendor/mediacodec/fruc_files 0700 mediacodec mediacodec
-    mkdir /data/vendor/mediacodec/fruc_assets 0700 mediacodec mediacodec
-    copy /vendor/firmware/fruc_kernels.exynos9610.bin /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos9610.bin
-    chown mediacodec mediacodec /data/vendor/mediacodec/fruc_assets/fruc_kernels.s9.slsi.bin
-    chown mediacodec mediacodec /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos9820.bin
-    chown mediacodec mediacodec /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos990.bin
-    chown mediacodec mediacodec /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos9610.bin
-    chown mediacodec mediacodec /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos980.bin
-    chown mediacodec mediacodec /data/vendor/mediacodec/fruc_assets/fruc_kernels.exynos7885.bin
-
     # FINGERPRINT
     mkdir /data/vendor/biometrics 0770 system system
     mkdir /data/vendor/fpSnrTest 0770 system system
