@@ -1,3 +1,0 @@
-# hwservice.te
-
-type hal_vendor_wvkprov_hwservice, hwservice_manager_type;
