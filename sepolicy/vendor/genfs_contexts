@@ -30,7 +30,6 @@ genfscon sysfs /devices/platform/12c30000.mfc0/video4linux/video6/name          
 genfscon sysfs /devices/platform/12c30000.mfc0/video4linux/video7/name                                         u:object_r:sysfs_v4l:s0
 genfscon sysfs /devices/platform/11a10000.speedy/i2c-12/12-0000/s2mpu09-rtc/rtc/rtc0/hctosys                   u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/system/chip-id/revision                                                                u:object_r:sysfs_chipid:s0
-genfscon sysfs /devices/virtual/sec/tsp/input/enabled                                                          u:object_r:sysfs_touchscreen_writable:s0
 
 # module
 genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                                                    u:object_r:sysfs_bt_writable:s0
