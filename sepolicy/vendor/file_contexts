@@ -1,11 +1,11 @@
-### DATA
+## Data Files
 /data/vendor/camera(/.*)?                    u:object_r:camera_vendor_data_file:s0
 /data/vendor/display(/.*)?                   u:object_r:display_vendor_data_file:s0
 /data/vendor/media(/.*)?                     u:object_r:media_vendor_data_file:s0
 /data/vendor/mediadrm(/.*)?                  u:object_r:mediadrm_vendor_data_file:s0
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
 
-### DEV
+## Devices
 /dev/block/platform/.+/by-name/cpefs         u:object_r:cpefs_block_device:s0
 
 # Bluetooth
@@ -33,8 +33,7 @@
 /optics(/.*)?                                u:object_r:optics_file:s0
 /prism(/.*)?                                 u:object_r:prism_file:s0
 
-### SYSFS
-
+## Sysfs
 # Block
 /sys/devices/platform/13520000.ufs/host0/target0:0:0/0:0:0:[0-4]/block/sd[a-e]/queue/scheduler  u:object_r:sysfs_io_sched_tuneable:s0
 /sys/devices/platform/13550000.dwmmc2/mmc_host/mmc0/mmc0:aaaa/block/mmcblk0/queue/scheduler     u:object_r:sysfs_io_sched_tuneable:s0
@@ -58,7 +57,7 @@
 /sys/devices/soc0/machine                                     u:object_r:sysfs_sec_gps:s0
 /sys/devices/soc0/revision                                    u:object_r:sysfs_sec_gps:s0
 
-### VENDOR
+## Vendor
 /(vendor|system/vendor)/bin/wlbtd            u:object_r:wlbtd_exec:s0
 
 /(vendor|system/vendor)/bin/vendor\.samsung\.hardware\.security\.widevine\.keyprovisioning@[0-9]\.[0-9]-service    u:object_r:hal_drm_widevine_exec:s0
