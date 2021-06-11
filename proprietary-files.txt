@@ -1,6 +1,6 @@
 # Common proprietary files - from Samsung package version P610XXU2CUE1, unless pinned
 
-### AUDIO
+## Audio
 vendor/etc/default_volume_tables.xml
 vendor/etc/mixer_paths.xml
 vendor/etc/usb_audio_policy_configuration.xml
@@ -25,7 +25,7 @@ vendor/lib64/libfloatingfeature.so
 vendor/lib64/libsecaudioinfo.so
 vendor/lib64/soundfx/libaudioeffectoffload.so
 
-### AUDIO_FIRMWARE
+## Audio Firmware
 vendor/firmware/APBargeIn_AUDIO_SLSI.bin
 vendor/firmware/APBiBF_AUDIO_SLSI.bin
 vendor/firmware/AP_AUDIO_SLSI.bin
@@ -33,11 +33,11 @@ vendor/firmware/SoundBoosterParam.bin
 vendor/firmware/calliope_iva.bin
 vendor/firmware/dax_param.bin
 
-### BLUETOOTH
+## Bluetooth
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
 product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
-### CAMERA
+## Camera
 vendor/lib/hw/camera.exynos9611.so
 vendor/lib/camera.device@1.0-impl.so
 vendor/lib/camera.device@3.2-impl.so
@@ -53,7 +53,7 @@ vendor/lib64/camera.device@3.4-impl.so
 vendor/lib64/camera.device@3.5-impl.so
 vendor/lib64/libexynoscamera_plugin.so
 
-# CAMERA_DEPENDENCIES
+## Camera dependencies
 vendor/lib/libSEF.quram.so
 vendor/lib/libacryl.so
 vendor/lib/libacryl_plugin_slsi_hdr10.so
@@ -61,7 +61,6 @@ vendor/lib/libcsc.so
 vendor/lib/libgiantmscl.so
 vendor/lib/libhwjpeg.so
 vendor/lib/libsensorlistener.so
-vendor/lib/libstagefrighthw.so
 vendor/lib/libuniapi.so
 vendor/lib/libuniplugin.so
 vendor/lib64/libSEF.quram.so
@@ -69,118 +68,57 @@ vendor/lib64/libcsc.so
 vendor/lib64/libgiantmscl.so
 vendor/lib64/libhwjpeg.so
 vendor/lib64/libsensorlistener.so
-vendor/lib64/libstagefrighthw.so
 vendor/lib64/libuniapi.so
 vendor/lib64/libuniplugin.so
 
-### CAMERA_FIRMWARE
+## Camera Firmware
 # Copied by vendor_init which needs read access
 system/media/fruc_kernels.exynos9610.bin:vendor/firmware/fruc_kernels.exynos9610.bin
 
-### CHARGER_FIRMWARE
+## Charger Firmware
 vendor/firmware/mfc_fw.bin
 
-# CODECS
+## Codecs
 vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_performance.xml
 vendor/etc/media_profiles_V1_0.xml
 
-# GATEKEEPER
+## Firmware
+vendor/firmware/CC_DRAM_CODE_FLASH.bin
+vendor/firmware/CC_DTCM_CODE_FLASH.bin
+vendor/firmware/CC_ITCM_CODE_FLASH.bin
+vendor/firmware/dbmd8_va_asrp_fw.bin
+vendor/firmware/dbmd8_va_fw.bin
+vendor/firmware/kernel_bin_enf.bin
+vendor/firmware/kernel_bin_inception.bin
+vendor/firmware/kernel_bin_mfb.bin
+vendor/firmware/kernel_bin_mobile_vgg.bin
+vendor/firmware/kernel_bin_nfd.bin
+vendor/firmware/param_ti.bin
+vendor/firmware/setfile_4ha.bin
+vendor/firmware/setfile_5e9.bin
+vendor/firmware/spkamp.bin
+
+## Gatekeeper
 vendor/lib/hw/gatekeeper.exynos9611.so
 vendor/lib64/hw/gatekeeper.exynos9611.so
 
-# GRALLOC
+## Gralloc
 vendor/lib/hw/gralloc.exynos9611.so
 vendor/lib64/hw/gralloc.exynos9611.so
 
-### GPS/GNSS
+## GPS
 vendor/bin/hw/vendor.samsung.hardware.gnss@2.0-service
 vendor/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 
-# GRAPICS_MALI
+## Graphics
 vendor/lib/egl/libGLES_mali.so
-vendor/lib64/egl/libGLES_mali.so
-
-# ION
 vendor/lib/libion_exynos.so
+vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/libion_exynos.so
 
-# KEYMASTER
-vendor/lib64/libkeymaster_helper.so
--vendor/lib64/libskeymaster4device.so
-
-### OMX
-vendor/lib/libepicoperator.so
-vendor/lib/libExynosOMX_Core.so
-vendor/lib/libExynosOMX_Resourcemanager.so
-vendor/lib/omx/libOMX.Exynos.AVC.Decoder.so
-vendor/lib/omx/libOMX.Exynos.AVC.Encoder.so
-vendor/lib/omx/libOMX.Exynos.HEVC.Decoder.so
-vendor/lib/omx/libOMX.Exynos.HEVC.Encoder.so
-vendor/lib/omx/libOMX.Exynos.MPEG4.Decoder.so
-vendor/lib/omx/libOMX.Exynos.MPEG4.Encoder.so
-vendor/lib/omx/libOMX.Exynos.VP8.Decoder.so
-vendor/lib/omx/libOMX.Exynos.VP8.Encoder.so
-vendor/lib/omx/libOMX.Exynos.VP9.Decoder.so
-vendor/lib/omx/libOMX.Exynos.VP9.Encoder.so
-vendor/lib/omx/libOMX.Exynos.WMV.Decoder.so
-vendor/lib64/libepicoperator.so
-vendor/lib64/libExynosOMX_Core.so
-vendor/lib64/libExynosOMX_Resourcemanager.so
-vendor/lib64/omx/libOMX.Exynos.AVC.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.AVC.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.HEVC.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.HEVC.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.MPEG4.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.VP8.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.VP8.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.VP9.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.VP9.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.WMV.Decoder.so
-
-### OMX_FIRMWARE
-vendor/firmware/fimc_is_lib.bin
-vendor/firmware/fimc_is_rta.bin
-
-### RIL
-vendor/lib/libaudio-ril.so
-vendor/lib/libsecril-client.so
-
-### SECNATIVE
-vendor/lib/libsecnativefeature.so
-vendor/lib64/libsecnativefeature.so
-
-### TEEGRIS
-vendor/bin/tzdaemon
-vendor/bin/tzts_daemon
-vendor/etc/init/teegris_v3.rc
-vendor/lib/libuuid.so
-vendor/lib/libteecl.so
-vendor/lib64/libiwt.so
-vendor/lib64/libteecl.so
-vendor/lib64/libuuid.so
-
-# TEEGRIS_FIRMWARE
-vendor/tee/00000000-0000-0000-0000-000000010081
-vendor/tee/00000000-0000-0000-0000-000000020081
-vendor/tee/00000000-0000-0000-0000-000046495645
-vendor/tee/00000000-0000-0000-0000-0050524f4341
-vendor/tee/00000000-0000-0000-0000-00535453540c
-vendor/tee/00000000-0000-0000-0000-00575644524d
-vendor/tee/00000000-0000-0000-0000-446e6c6f6164
-vendor/tee/00000000-0000-0000-0000-474154454b45
-vendor/tee/00000000-0000-0000-0000-564c544b5052
-vendor/tee/00000000-0000-0000-0000-656e676d6f64
-vendor/tee/00000000-0000-0000-0000-657365636f6d
-vendor/tee/00000000-0000-0000-0000-6d73745f5441
-vendor/tee/driver/00000000-0000-0000-0000-00535453540b
-vendor/tee/driver/00000000-0000-0000-0000-4d53546d7374
-vendor/tee/driver/00000000-0000-0000-0000-564c544b4456
-vendor/tee/tui/resolution_common/ID00000100
-
-### SAMSUNG_SLSI_HWC
+## HWC
 vendor/lib64/hw/hwcomposer.exynos9611.so
 vendor/lib/libExynosHWCService.so
 vendor/lib/libGrallocWrapper.so
@@ -202,40 +140,100 @@ vendor/lib64/libexynosscaler.so
 vendor/lib64/libexynosutils.so
 vendor/lib64/libexynosv4l2.so
 
-### SAMSUNG_SLSI_MEMTRACK
+## Keymaster
+vendor/lib64/libkeymaster_helper.so
+-vendor/lib64/libskeymaster4device.so
+
+## Memtrack
 vendor/lib64/hw/memtrack.exynos9611.so
 vendor/lib/hw/memtrack.exynos9611.so
 
-### SAMSUNG_SLSI_FIRMWARE
-vendor/firmware/CC_DRAM_CODE_FLASH.bin
-vendor/firmware/CC_DTCM_CODE_FLASH.bin
-vendor/firmware/CC_ITCM_CODE_FLASH.bin
-vendor/firmware/dbmd8_va_asrp_fw.bin
-vendor/firmware/dbmd8_va_fw.bin
-vendor/firmware/kernel_bin_enf.bin
-vendor/firmware/kernel_bin_inception.bin
-vendor/firmware/kernel_bin_mfb.bin
-vendor/firmware/kernel_bin_mobile_vgg.bin
-vendor/firmware/kernel_bin_nfd.bin
-vendor/firmware/param_ti.bin
-vendor/firmware/setfile_4ha.bin
-vendor/firmware/setfile_5e9.bin
-vendor/firmware/spkamp.bin
+## OMX
+vendor/lib/libepicoperator.so
+vendor/lib/libstagefrighthw.so
+vendor/lib/libExynosOMX_Core.so
+vendor/lib/libExynosOMX_Resourcemanager.so
+vendor/lib/omx/libOMX.Exynos.AVC.Decoder.so
+vendor/lib/omx/libOMX.Exynos.AVC.Encoder.so
+vendor/lib/omx/libOMX.Exynos.HEVC.Decoder.so
+vendor/lib/omx/libOMX.Exynos.HEVC.Encoder.so
+vendor/lib/omx/libOMX.Exynos.MPEG4.Decoder.so
+vendor/lib/omx/libOMX.Exynos.MPEG4.Encoder.so
+vendor/lib/omx/libOMX.Exynos.VP8.Decoder.so
+vendor/lib/omx/libOMX.Exynos.VP8.Encoder.so
+vendor/lib/omx/libOMX.Exynos.VP9.Decoder.so
+vendor/lib/omx/libOMX.Exynos.VP9.Encoder.so
+vendor/lib/omx/libOMX.Exynos.WMV.Decoder.so
+vendor/lib64/libepicoperator.so
+vendor/lib64/libstagefrighthw.so
+vendor/lib64/libExynosOMX_Core.so
+vendor/lib64/libExynosOMX_Resourcemanager.so
+vendor/lib64/omx/libOMX.Exynos.AVC.Decoder.so
+vendor/lib64/omx/libOMX.Exynos.AVC.Encoder.so
+vendor/lib64/omx/libOMX.Exynos.HEVC.Decoder.so
+vendor/lib64/omx/libOMX.Exynos.HEVC.Encoder.so
+vendor/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so
+vendor/lib64/omx/libOMX.Exynos.MPEG4.Encoder.so
+vendor/lib64/omx/libOMX.Exynos.VP8.Decoder.so
+vendor/lib64/omx/libOMX.Exynos.VP8.Encoder.so
+vendor/lib64/omx/libOMX.Exynos.VP9.Decoder.so
+vendor/lib64/omx/libOMX.Exynos.VP9.Encoder.so
+vendor/lib64/omx/libOMX.Exynos.WMV.Decoder.so
 
-### SENSORS
+## OMX Firmware
+vendor/firmware/fimc_is_lib.bin
+vendor/firmware/fimc_is_rta.bin
+
+## RIL
+vendor/lib/libaudio-ril.so
+vendor/lib/libsecril-client.so
+
+## SECNATIVE
+vendor/lib/libsecnativefeature.so
+vendor/lib64/libsecnativefeature.so
+
+## TEEGRIS
+vendor/bin/tzdaemon
+vendor/bin/tzts_daemon
+vendor/etc/init/teegris_v3.rc
+vendor/lib/libuuid.so
+vendor/lib/libteecl.so
+vendor/lib64/libiwt.so
+vendor/lib64/libteecl.so
+vendor/lib64/libuuid.so
+
+## TEEGRIS Firmware
+vendor/tee/00000000-0000-0000-0000-000000010081
+vendor/tee/00000000-0000-0000-0000-000000020081
+vendor/tee/00000000-0000-0000-0000-000046495645
+vendor/tee/00000000-0000-0000-0000-0050524f4341
+vendor/tee/00000000-0000-0000-0000-00535453540c
+vendor/tee/00000000-0000-0000-0000-00575644524d
+vendor/tee/00000000-0000-0000-0000-446e6c6f6164
+vendor/tee/00000000-0000-0000-0000-474154454b45
+vendor/tee/00000000-0000-0000-0000-564c544b5052
+vendor/tee/00000000-0000-0000-0000-656e676d6f64
+vendor/tee/00000000-0000-0000-0000-657365636f6d
+vendor/tee/00000000-0000-0000-0000-6d73745f5441
+vendor/tee/driver/00000000-0000-0000-0000-00535453540b
+vendor/tee/driver/00000000-0000-0000-0000-4d53546d7374
+vendor/tee/driver/00000000-0000-0000-0000-564c544b4456
+vendor/tee/tui/resolution_common/ID00000100
+
+## Sensors
 vendor/etc/sensors/hals.conf
 vendor/lib/hw/sensors.sensorhub.so
 vendor/lib/sensors.grip.so
 vendor/lib64/hw/sensors.sensorhub.so
 vendor/lib64/sensors.grip.so
 
-### WIDEVINE
+## Widevine
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 vendor/lib/libwvhidl.so
 
-### WIFI
+## Wi-Fi
 vendor/bin/hw/macloader
 vendor/bin/wlbtd
 vendor/etc/init/wifi.rc

@@ -1,5 +1,3 @@
-# kernel.te
-
 allow kernel self:capability mknod;
 
 allow kernel device:dir { add_name write remove_name rmdir };
