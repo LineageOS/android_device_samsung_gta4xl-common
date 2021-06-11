@@ -4,4 +4,3 @@ vendor.samsung.hardware.gnss::ISehGnss                                          
 vendor.samsung.hardware.radio.bridge::ISehBridge                                        u:object_r:hal_telephony_hwservice:s0
 vendor.samsung.hardware.radio.channel::ISehChannel                                      u:object_r:hal_telephony_hwservice:s0
 vendor.samsung.hardware.radio::ISehRadio                                                u:object_r:hal_telephony_hwservice:s0
-vendor.samsung.hardware.security.widevine.keyprovisioning::ISehWidevineKeyProvisioning  u:object_r:hal_vendor_wvkprov_hwservice:s0

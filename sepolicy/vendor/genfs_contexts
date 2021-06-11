@@ -1,21 +1,18 @@
-# genfs_contexts
-
-# DEBUGFS
+## DebugFS
 genfscon debugfs /mali/                                                                                        u:object_r:debugfs_mali:s0
 genfscon debugfs /mali/mem/                                                                                    u:object_r:debugfs_mali_mem:s0
 genfscon debugfs /ion                                                                                          u:object_r:debugfs_ion:s0
 genfscon debugfs /dma_buf                                                                                      u:object_r:debugfs_ion_dma:s0
 
-# PROC
+## Proc
 genfscon proc /simslot_count                                                                                   u:object_r:proc_simslot_count:s0
 genfscon proc /sys/vm/swappiness                                                                               u:object_r:proc_swappiness:s0
 
-# SYSFS
-
-# class
+## Sysfs
+# Class
 genfscon sysfs /class/video4linux                                                                              u:object_r:sysfs_v4l:s0
 
-# devices
+# Devices
 genfscon sysfs /devices/platform/panel/panel_drv/backlight/panel/brightness                                    u:object_r:sysfs_backlight_writable:s0
 genfscon sysfs /devices/platform/panel/panel_drv/backlight/panel/max_brightness                                u:object_r:sysfs_backlight_writable:s0
 genfscon sysfs /devices/platform/13900000.spi/spi_master/spi6/spi6.0/input/input0/enabled                      u:object_r:sysfs_touchscreen_writable:s0
@@ -31,5 +28,5 @@ genfscon sysfs /devices/platform/12c30000.mfc0/video4linux/video7/name          
 genfscon sysfs /devices/platform/11a10000.speedy/i2c-12/12-0000/s2mpu09-rtc/rtc/rtc0/hctosys                   u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/system/chip-id/revision                                                                u:object_r:sysfs_chipid:s0
 
-# module
+# Module
 genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                                                    u:object_r:sysfs_bt_writable:s0

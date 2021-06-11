@@ -1,3 +1,1 @@
-# zygote.te
-
 allow zygote system_data_file:dir create_file_perms;
