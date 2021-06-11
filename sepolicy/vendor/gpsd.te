@@ -1,5 +1,3 @@
-# gpsd.te
-
 r_dir_file(gpsd, sysfs_sec_gps);
 
 allow gpsd sysfs_gps_writable:file rw_file_perms;
