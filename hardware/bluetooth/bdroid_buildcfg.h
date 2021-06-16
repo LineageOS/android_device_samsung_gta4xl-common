@@ -32,4 +32,6 @@
 
 #pragma pop_macro("PROPERTY_VALUE_MAX")
 
+#define BTM_ESCO_TRANSPORT_UNIT_SIZE_PCM16
+
 #endif /* _BDROID_BUILDCFG_H */
