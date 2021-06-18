@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4dd305b4_742465d3",
+        "filename": "Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 17401
+      },
+      "writtenOn": "2021-06-18T18:17:35Z",
+      "side": 1,
+      "message": "these were split over the file hardware/gles/{gles, opencl, vulkan}.mk before",
+      "parentUuid": "1e57cae0_6786906d",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 0
+      },
+      "revId": "6bb9841c403e7cf2cc0256dc43c4f5bc948eac99",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "64928219_ea294d9b",
         "filename": "sepolicy/vendor/property_contexts",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2021-06-18T18:13:23Z",
       "side": 1,
       "message": "these look incomplete",
+      "revId": "6bb9841c403e7cf2cc0256dc43c4f5bc948eac99",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6544079d_a8160c72",
+        "filename": "sepolicy/vendor/property_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 17401
+      },
+      "writtenOn": "2021-06-18T18:17:35Z",
+      "side": 1,
+      "message": "this is intentional to catch all props starting with \"persist.remnet.\"",
+      "parentUuid": "64928219_ea294d9b",
       "revId": "6bb9841c403e7cf2cc0256dc43c4f5bc948eac99",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
