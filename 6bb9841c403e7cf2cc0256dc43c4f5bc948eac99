@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e57cae0_6786906d",
+        "filename": "Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-06-18T18:13:23Z",
+      "side": 1,
+      "message": "am I missing where these lines have been before? If they are new they seem to belong to a new commit?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 0
+      },
+      "revId": "6bb9841c403e7cf2cc0256dc43c4f5bc948eac99",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64928219_ea294d9b",
+        "filename": "sepolicy/vendor/property_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-06-18T18:13:23Z",
+      "side": 1,
+      "message": "these look incomplete",
+      "revId": "6bb9841c403e7cf2cc0256dc43c4f5bc948eac99",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "977318eb_01e8ed78",
+        "filename": "sepolicy/vendor/tzdaemon.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-06-18T18:13:23Z",
+      "side": 1,
+      "message": "since tee_efs_file:dir is also in L#5, just move that \"search\" there?",
+      "revId": "6bb9841c403e7cf2cc0256dc43c4f5bc948eac99",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
