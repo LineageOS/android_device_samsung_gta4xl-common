@@ -40,7 +40,3 @@ def OTA_InstallEnd(info):
   PrintInfo(info, "/dev/block/by-name/vbmeta")
   AddImage(info, "vbmeta.img", "/dev/block/by-name/vbmeta")
   return
-
-def FullOTA_InstallBegin(info):
-  AddImage(info, "super_empty.img", "/dev/block/by-name/super")
-  return
