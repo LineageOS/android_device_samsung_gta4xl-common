@@ -1,4 +1,4 @@
-# Common proprietary files - from Samsung package version P610XXU2CUE1, unless pinned
+# Common proprietary files - from Samsung package version P610XXS2CUG5, unless pinned
 
 ## Audio
 vendor/etc/default_volume_tables.xml
