@@ -2,6 +2,7 @@
 
 ## Audio
 vendor/etc/default_volume_tables.xml
+vendor/etc/dolby/dax-default.xml
 vendor/etc/mixer_paths.xml
 vendor/etc/usb_audio_policy_configuration.xml
 vendor/lib/hw/sound_trigger.primary.universal9611.so
@@ -18,7 +19,9 @@ vendor/lib/libaudio_soundtrigger.so
 vendor/lib/libaudioproxy.so
 vendor/lib/libdatamod.so
 vendor/lib/libfloatingfeature.so
+vendor/lib/libprofileparamstorage.so
 vendor/lib/librecordalive.so
+vendor/lib/libsecaudiocoreutils.so
 vendor/lib/libsecaudioinfo.so
 vendor/lib/soundfx/libaudioeffectoffload.so
 vendor/lib64/libfloatingfeature.so
