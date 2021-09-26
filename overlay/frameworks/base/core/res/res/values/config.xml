@@ -250,6 +250,7 @@
          backlight values for lux levels between these control points.
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
+        <item>5</item>
         <item>8</item>
         <item>15</item>
         <item>25</item>
@@ -266,6 +267,8 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>2</item>
+        <item>2</item>
         <item>6</item>
         <item>20</item>
         <item>38</item>
@@ -274,8 +277,10 @@
         <item>143</item>
         <item>199</item>
         <item>255</item>
-        <item>255</item>
     </integer-array>
+
+    <!-- Minimum screen brightness setting allowed by power manager. -->
+    <integer name="config_screenBrightnessSettingMinimum">2</integer>
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
