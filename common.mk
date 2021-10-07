@@ -77,6 +77,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.3.vendor:32 \
     android.hardware.drm@1.4-service.clearkey
 
 # fastbootd
@@ -91,6 +92,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.1.vendor:64
 
 # Graphics
 # Device uses high-density artwork where available
@@ -201,8 +206,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.4.vendor:64 \
+    android.hardware.radio.config@1.2.vendor:64 \
+    android.hardware.radio.deprecated@1.0.vendor:64
+
 # Sensors
 PRODUCT_PACKAGES += \
+    android.hardware.contexthub@1.0.vendor:64 \
     android.hardware.sensors@2.1-service.samsung-multihal
 
 # Shims
