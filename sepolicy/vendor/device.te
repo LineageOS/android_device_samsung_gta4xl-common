@@ -1,4 +1,3 @@
 type cpefs_block_device, dev_type;
-type gnss_device, dev_type;
 type m2m1shot_device, dev_type;
 type secmem_device, dev_type;
