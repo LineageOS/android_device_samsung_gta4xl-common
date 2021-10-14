@@ -60,6 +60,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib*/libexynosdisplay.so)
+            sed -i "s/hwc\.exynos\.vsync_mode/vendor.hwc.vsync_mode/g" "${2}"
+            ;;
         vendor/lib*/libsensorlistener.so)
             "${PATCHELF}" --add-needed libshim_sensorndkbridge.so "${2}"
             ;;
