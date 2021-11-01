@@ -806,6 +806,44 @@ on fs
     chown system radio /sys/class/audio/earjack/state
     chown system radio /sys/class/audio/earjack/mic_adc
 
+# Cirrus Amp Calibration and Factory test
+    chown system audio /sys/class/cirrus/cirrus_cal/status
+    chown system audio /sys/class/cirrus/cirrus_cal/rdc
+    chown system audio /sys/class/cirrus/cirrus_cal/rdc_r
+    chown system audio /sys/class/cirrus/cirrus_cal/temp
+    chown system audio /sys/class/cirrus/cirrus_cal/temp_r
+    mkdir /efs/cirrus 0770 audioserver audio
+    chown audioserver audio /efs/cirrus/temp_cal
+    chown audioserver audio /efs/cirrus/rdc_cal
+    chown audioserver audio /efs/cirrus/rdc_cal_r
+    chmod 0660 /efs/cirrus/temp_cal
+    chmod 0660 /efs/cirrus/rdc_cal
+    chmod 0660 /efs/cirrus/rdc_cal_r
+    chown system audio /sys/class/cirrus/cirrus_cal/v_status
+    chown system audio /sys/class/cirrus/cirrus_cal/v_validation
+    chown system audio /sys/class/cirrus/cirrus_cal/v_validation_r
+
+# Cirrus Amp power
+    chown system audio /sys/class/cirrus/cirrus_pwr/status
+    chown system audio /sys/class/cirrus/cirrus_pwr/value
+    chown system audio /sys/class/cirrus/cirrus_pwr/value_r
+    chown system audio /sys/class/cirrus/cirrus_pwr/spk_t
+    chown system audio /sys/class/cirrus/cirrus_pwr/spk_t_r
+    chown system audio /sys/class/cirrus/cirrus_pwr/env_temp
+    chown system audio /sys/class/cirrus/cirrus_pwr/env_temp_r
+
+# Cirrus Amp Bigdata
+    chown system audio /sys/class/cirrus/cirrus_bd/max_exc_left
+    chown system audio /sys/class/cirrus/cirrus_bd/max_exc_right
+    chown system audio /sys/class/cirrus/cirrus_bd/max_temp_left
+    chown system audio /sys/class/cirrus/cirrus_bd/max_temp_right
+    chown system audio /sys/class/cirrus/cirrus_bd/max_temp_keep_left
+    chown system audio /sys/class/cirrus/cirrus_bd/max_temp_keep_right
+    chown system audio /sys/class/cirrus/cirrus_bd/over_exc_count_left
+    chown system audio /sys/class/cirrus/cirrus_bd/over_exc_count_right
+    chown system audio /sys/class/cirrus/cirrus_bd/over_temp_count_left
+    chown system audio /sys/class/cirrus/cirrus_bd/over_temp_count_right
+
     chmod 0660 /sys/kernel/debug/audio/log
     chown audioserver system /sys/kernel/debug/audio/log
     chmod 0660 /sys/kernel/debug/audio/log_enable
