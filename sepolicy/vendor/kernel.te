@@ -1,7 +1,9 @@
 allow kernel self:capability mknod;
 
+allow kernel block_device:dir search;
 allow kernel device:dir { add_name write remove_name rmdir };
 allow kernel device:chr_file { create setattr getattr unlink };
+dontaudit kernel device:blk_file create;
 
 r_dir_file(kernel, efs_file);
 r_dir_file(kernel, app_efs_file);

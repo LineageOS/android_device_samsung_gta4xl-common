@@ -1,0 +1,1 @@
+dontaudit hal_sensors_default property_socket:sock_file write;
