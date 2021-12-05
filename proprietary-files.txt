@@ -225,8 +225,6 @@ vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 vendor/lib/libwvhidl.so
 
 ## Wi-Fi
-vendor/bin/hw/macloader
-vendor/bin/wlbtd
 vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_slsi.rc
 vendor/etc/wifi/hydra_config.sdb

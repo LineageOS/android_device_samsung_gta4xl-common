@@ -68,13 +68,10 @@
 /sys/devices/soc0/revision                                    u:object_r:sysfs_sec_gps:s0
 
 ## Vendor
-/(vendor|system/vendor)/bin/wlbtd            u:object_r:wlbtd_exec:s0
-
 /(vendor|system/vendor)/bin/vendor\.samsung\.hardware\.security\.widevine\.keyprovisioning@[0-9]\.[0-9]-service    u:object_r:hal_drm_widevine_exec:s0
 
 /(vendor|system/vendor)/bin/hw/gps.sh        u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/hw/gpsd          u:object_r:gpsd_exec:s0
-/(vendor|system/vendor)/bin/hw/macloader     u:object_r:macloader_exec:s0
 
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]\.[0-9]-service\.clearkey                u:object_r:hal_drm_clearkey_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]\.[0-9]-service\.widevine                u:object_r:hal_drm_widevine_exec:s0
