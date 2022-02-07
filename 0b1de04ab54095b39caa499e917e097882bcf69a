@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31a2a826_ed171f70",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15173
+      },
+      "writtenOn": "2022-02-07T14:56:27Z",
+      "side": 1,
+      "message": "This should probably be landed in our shipping branch as well. Without setting the large mouse pointer accessibility option, the device is absolutely unusable with a mouse.",
+      "revId": "0b1de04ab54095b39caa499e917e097882bcf69a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
