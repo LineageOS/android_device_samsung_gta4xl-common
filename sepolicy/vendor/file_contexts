@@ -6,8 +6,6 @@
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
 
 ## Devices
-/dev/block/platform/.+/by-name/cpefs         u:object_r:cpefs_block_device:s0
-
 # Bluetooth
 /dev/scsc_h4_0                               u:object_r:bt_device:s0
 
