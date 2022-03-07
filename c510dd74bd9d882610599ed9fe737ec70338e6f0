@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83dfcfcb_4788248d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28935
+      },
+      "writtenOn": "2022-03-07T15:19:17Z",
+      "side": 1,
+      "message": "Well my maths didnt check out completely, but with trial end error I\u0027ve moved the stylus icon hotspot to center below the stylus.\nlineage-18.1 will need this too.",
+      "revId": "c510dd74bd9d882610599ed9fe737ec70338e6f0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
