@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcb75120_9327b984",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28935
+      },
+      "writtenOn": "2022-03-07T19:47:22Z",
+      "side": 1,
+      "message": "moved into xxhdpi to not influence big mouse icon pointer accessibility setting",
+      "revId": "91c1389723124d77eb8d69a70029ebf5446f6dd4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
