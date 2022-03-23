@@ -1,8 +1,8 @@
 # Camera
-persist.vendor.sys.camera. u:object_r:vendor_camera_prop:s0
+persist.vendor.sys.camera.    u:object_r:vendor_camera_prop:s0
 
 # HWC
-vendor.hwc.vsync_mode      u:object_r:vendor_hwc_prop:s0
+vendor.hwc.exynos.vsync_mode  u:object_r:vendor_hwc_prop:s0
 
 # Wlan
-vendor.wlan.               u:object_r:vendor_wlan_prop:s0
+vendor.wlan.                  u:object_r:vendor_wlan_prop:s0
