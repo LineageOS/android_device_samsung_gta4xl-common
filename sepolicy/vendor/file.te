@@ -1,6 +1,5 @@
 # data types
 type camera_vendor_data_file, file_type, data_file_type;
-type display_vendor_data_file, file_type, data_file_type;
 type media_vendor_data_file, file_type, data_file_type;
 type mediadrm_vendor_data_file, file_type, data_file_type;
 
