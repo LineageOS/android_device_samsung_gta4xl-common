@@ -30,8 +30,6 @@
 /* 'strings libbluetooth.so' */
 #define BTA_AV_SINK_INCLUDED TRUE
 
-#define BTM_ESCO_TRANSPORT_UNIT_SIZE_PCM16
-
 #pragma pop_macro("PROPERTY_VALUE_MAX")
 
 #endif /* _BDROID_BUILDCFG_H */
