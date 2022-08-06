@@ -63,6 +63,10 @@ function blob_fixup() {
         vendor/lib*/libsensorlistener.so)
             "${PATCHELF}" --add-needed libshim_sensorndkbridge.so "${2}"
             ;;
+
+        vendor/lib/hw/audio.primary.exynos9611.so)
+            "${PATCHELF}" --remove-needed libaudio_soundtrigger.so "${2}"
+            ;;
     esac
 }
 
