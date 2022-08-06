@@ -1,4 +1,4 @@
-# Common proprietary files - from Samsung package version P610XXU2EVC5, unless pinned
+# Common proprietary files - from Samsung package version P610XXU2EVG7, unless pinned
 
 ## Audio
 vendor/etc/default_volume_tables.xml
@@ -61,7 +61,7 @@ vendor/firmware/dax_param.bin
 -vendor/lib64/libuniapi.so
 -vendor/lib64/libuniplugin.so
 
-## Charger Firmware
+## Exynos Multi-Format Codec (MFC) Firmware
 vendor/firmware/mfc_fw.bin
 
 ## Codecs
@@ -209,11 +209,11 @@ vendor/etc/sensors/hals.conf
 -vendor/lib64/sensors.sensorhub.so
 -vendor/lib64/sensors.grip.so
 
-## Widevine
--vendor/bin/hw/android.hardware.drm@1.4-service.widevine
-vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
--vendor/lib/libwvhidl.so
+## Widevine - From P610XXU2EVC5
+-vendor/bin/hw/android.hardware.drm@1.4-service.widevine|60d0ed267f1468110a79c64a56af3c978f269f18
+vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|992f63e9700da29099e0590858a6becaaadb2976
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
+-vendor/lib/libwvhidl.so|fd87fdf9179762fbde4b457d7003f5cccd8cd23c
 
 ## Wi-Fi
 vendor/etc/init/wifi.rc
