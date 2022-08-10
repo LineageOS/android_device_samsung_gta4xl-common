@@ -16,6 +16,23 @@
       "message": "I don\u0027t have a corresponding change with updates for gta4xl, since I don\u0027t own one and so can\u0027t test anything, and am short on time, so one needs to be made for it as well.",
       "revId": "7428eb778c93c66009aaafc5f9ee49eca3470fe2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c1566ea_c4f539d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15173
+      },
+      "writtenOn": "2022-08-10T01:06:25Z",
+      "side": 1,
+      "message": "Wow they finally dropped an update? I swear I last looked about a week ago.\n\nAdmin hold until I get a chance to update and test P615, not to mention that updating VSPL in common without updating P615\u0027s blobs is lying.",
+      "revId": "7428eb778c93c66009aaafc5f9ee49eca3470fe2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
