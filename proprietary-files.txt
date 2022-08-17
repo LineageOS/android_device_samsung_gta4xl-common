@@ -235,3 +235,7 @@ vendor/etc/wifi/mx140_wlan_t.hcf
 vendor/etc/wifi/mx140_wlan_t_sw.hcf
 vendor/etc/wifi/platform.txt
 vendor/etc/wifi/slsi_reg_database.bin
+
+## VNDK
+# libutils - from prebuilts/vndk/v32 - android-13.0.0_r3
+-vendor/lib64/libutils-v32.so|79e694bea942225a64e768468000dce3a0e44b22
