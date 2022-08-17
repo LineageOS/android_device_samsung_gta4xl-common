@@ -60,6 +60,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib*/libexynosdisplay.so|vendor/lib*/hw/hwcomposer.exynos9611.so|vendor/lib*/sensors.*.so)
+            "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
+            ;;
         vendor/lib*/libsensorlistener.so)
             "${PATCHELF}" --add-needed libshim_sensorndkbridge.so "${2}"
             ;;
