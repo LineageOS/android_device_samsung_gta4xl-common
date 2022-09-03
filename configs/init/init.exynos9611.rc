@@ -862,6 +862,10 @@ service watchdogd /system/bin/watchdogd 10 20
      oneshot
      seclabel u:r:watchdogd:s0
 
+on init && property:ro.bootmode=charger
+    write /sys/class/graphics/fb0/blank 1
+    write /sys/class/graphics/fb0/blank 0
+
 # sensorhub fw
 on post-fs
     chmod 0770 /spu/sensorhub

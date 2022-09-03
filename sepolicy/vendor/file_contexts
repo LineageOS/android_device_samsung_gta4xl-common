@@ -50,6 +50,9 @@
 /sys/devices/virtual/camera/rear/ssrm_camera_info             u:object_r:sysfs_camera_writable:s0
 /sys/devices/virtual/camera(/.*)                              u:object_r:sysfs_camera:s0
 
+# Graphics
+/sys/devices/platform/148b0000.decon_f/graphics/fb0/blank     u:object_r:sysfs_graphics_writable:s0
+
 # Net
 /sys/devices/platform/119c0000.scsc_wifibt/net(/.*)/mtu       u:object_r:sysfs_net_mtu_writable:s0
 /sys/devices/virtual/net(/.*)/mtu                             u:object_r:sysfs_net_mtu_writable:s0
