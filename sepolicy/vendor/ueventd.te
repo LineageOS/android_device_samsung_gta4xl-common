@@ -1,4 +1,5 @@
 allow ueventd self:capability sys_nice;
+dontaudit ueventd self:capability2 mac_admin;
 
 allow ueventd metadata_file:dir search;
 dontaudit ueventd gsi_metadata_file:dir search;

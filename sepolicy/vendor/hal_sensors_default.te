@@ -1,1 +1,3 @@
+binder_call(hal_sensors_default, system_server)
+
 dontaudit hal_sensors_default property_socket:sock_file write;
