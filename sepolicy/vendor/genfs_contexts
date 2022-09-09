@@ -9,6 +9,9 @@ genfscon sysfs /class/video4linux                                               
 # Devices
 genfscon sysfs /devices/platform/panel/panel_drv/backlight/panel/brightness                                    u:object_r:sysfs_backlight_writable:s0
 genfscon sysfs /devices/platform/panel/panel_drv/backlight/panel/max_brightness                                u:object_r:sysfs_backlight_writable:s0
+genfscon sysfs /devices/platform/11500000.mali/dma_buf_gpu_mem                                                 u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/11500000.mali/total_gpu_mem                                                   u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/11500000.mali/kprcs                                                           u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/13900000.spi/spi_master/spi6/spi6.0/input/input0/enabled                      u:object_r:sysfs_touchscreen_writable:s0
 genfscon sysfs /devices/platform/13900000.spi/spi_master/spi6/spi6.0/input/input1/enabled                      u:object_r:sysfs_touchscreen_writable:s0
 genfscon sysfs /devices/platform/13840000.i2c/i2c-1/1-0049/sm5713-fuelgauge/power_supply/sm5713-fuelgauge/type u:object_r:sysfs_battery:s0
@@ -21,9 +24,6 @@ genfscon sysfs /devices/platform/12c30000.mfc0/video4linux/video6/name          
 genfscon sysfs /devices/platform/12c30000.mfc0/video4linux/video7/name                                         u:object_r:sysfs_v4l:s0
 genfscon sysfs /devices/platform/11a10000.speedy/i2c-12/12-0000/s2mpu09-rtc/rtc/rtc0/hctosys                   u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/system/chip-id/revision                                                                u:object_r:sysfs_chipid:s0
-
-# Kernel
-genfscon sysfs /kernel/gpu/gpu_memory                                                                          u:object_r:sysfs_gpu_memory:s0
 
 # Firmware
 genfscon sysfs /firmware/devicetree/base/sound/mixer-paths                                                     u:object_r:sysfs_audio:s0
