@@ -130,10 +130,6 @@ vendor/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc
 -vendor/lib64/libkeymaster_helper.so
 -vendor/lib64/libskeymaster4device.so
 
-## Memtrack
--vendor/lib64/hw/memtrack.exynos9611.so
--vendor/lib/hw/memtrack.exynos9611.so
-
 ## OMX
 -vendor/lib/libstagefrighthw.so
 -vendor/lib/libExynosOMX_Core.so
