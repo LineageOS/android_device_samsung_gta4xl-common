@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a4d27c1d_2c4a05d7",
+        "filename": "Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 25925
+      },
+      "writtenOn": "2022-09-15T08:35:52Z",
+      "side": 1,
+      "message": "These aren\u0027t blobs tho",
+      "parentUuid": "f80c2c39_e646f1f6",
+      "range": {
+        "startLine": 49,
+        "startChar": 1,
+        "endLine": 49,
+        "endChar": 66
+      },
+      "revId": "b166e8e72edb45b5b61613f529a329ea3ae36a1e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "98c2ab2c_88f2b585",
         "filename": "proprietary-files.txt",
         "patchSetId": 1
@@ -37,6 +61,30 @@
       "writtenOn": "2022-09-15T08:27:30Z",
       "side": 1,
       "message": "Don\u0027t do this. Just add a PRODUCT_COPY_FILES rule in device.mk.",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 242,
+        "endChar": 0
+      },
+      "revId": "b166e8e72edb45b5b61613f529a329ea3ae36a1e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c33cec73_95628c05",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 25925
+      },
+      "writtenOn": "2022-09-15T08:35:52Z",
+      "side": 1,
+      "message": "We don\u0027t have BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES and I wouldn\u0027t want to add it just for this.\nCould create an Android.mk for it instead.",
+      "parentUuid": "98c2ab2c_88f2b585",
       "range": {
         "startLine": 239,
         "startChar": 0,
