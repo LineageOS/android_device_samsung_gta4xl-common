@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6eb54f0_de5a18ec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-09-15T08:19:15Z",
+      "side": 1,
+      "message": "This is not needed here. It\u0027s already the default in vendor/lineage when compiling kernel with clang.",
+      "revId": "9dbc9c9beeceea81946ff03f2eb54b34822c1d89",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
