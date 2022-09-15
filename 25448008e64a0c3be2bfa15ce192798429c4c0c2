@@ -46,6 +46,30 @@
       },
       "revId": "25448008e64a0c3be2bfa15ce192798429c4c0c2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "906fa947_00d2cf55",
+        "filename": "common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-09-15T12:06:01Z",
+      "side": 1,
+      "message": "I am aware, and I have the same thing on my devices. But with aidl HAL the 64-bit libs get built anyway.",
+      "parentUuid": "34451b69_a9480cf8",
+      "range": {
+        "startLine": 29,
+        "startChar": 41,
+        "endLine": 29,
+        "endChar": 44
+      },
+      "revId": "25448008e64a0c3be2bfa15ce192798429c4c0c2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
