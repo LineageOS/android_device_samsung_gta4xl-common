@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab74c47e_fe511012",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-09-19T17:06:52Z",
+      "side": 1,
+      "message": "You might want to update to proper values: https://review.lineageos.org/c/LineageOS/android_device_samsung_gts4lv-common/+/337339.",
+      "revId": "49c42dca1b4f83cc7097d7258a4be5af2701a0f2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
