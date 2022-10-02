@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2021 The LineageOS Project
+# Copyright (C) 2020-2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ BOARD_HAVE_BLUETOOTH_SLSI := true
 ## Boot Image
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := $(COMMON_PATH)/mkbootimg.mk
 BOARD_DTB_OFFSET := 0x00000000
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -79,6 +79,9 @@ BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 1258291200
 BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT := -1
 endif
+
+## DTB
+BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/exynos9611.cfg
 
 ## DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
