@@ -26,13 +26,10 @@ def IncrementalOTA_InstallEnd(info):
   return
 
 def AddImage(info, basename, dest):
-  name = basename
   data = info.input_zip.read("IMAGES/" + basename)
-  common.ZipWriteStr(info.output_zip, name, data)
-  info.script.AppendExtra('package_extract_file("%s", "%s");' % (name, dest))
-
-def PrintInfo(info, dest):
+  common.ZipWriteStr(info.output_zip, basename, data)
   info.script.Print("Patching {} image unconditionally...".format(dest.split('/')[-1]))
+  info.script.AppendExtra('package_extract_file("%s", "%s");' % (basename, dest))
 
 def AddFirmwareImage(info, model, basename, dest, simple=False, offset=8):
   if ("RADIO/%s_%s" % (basename, model)) in info.input_zip.namelist():
@@ -48,9 +45,7 @@ def AddFirmwareImage(info, model, basename, dest, simple=False, offset=8):
     return 0
 
 def OTA_InstallEnd(info):
-  PrintInfo(info, "/dev/block/by-name/dtbo")
   AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo")
-  PrintInfo(info, "/dev/block/by-name/vbmeta")
   AddImage(info, "vbmeta.img", "/dev/block/by-name/vbmeta")
 
   if "RADIO/models" in info.input_zip.namelist():
