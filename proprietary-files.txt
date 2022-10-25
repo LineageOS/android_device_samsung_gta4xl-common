@@ -21,6 +21,7 @@ vendor/etc/usb_audio_policy_configuration.xml
 -vendor/lib/librecordalive.so
 -vendor/lib/libsecaudiocoreutils.so
 -vendor/lib/libsecaudioinfo.so
+-vendor/lib/libspatializerparamstorage.so
 -vendor/lib/soundfx/libaudioeffectoffload.so
 -vendor/lib64/libfloatingfeature.so
 -vendor/lib64/libsecaudioinfo.so
