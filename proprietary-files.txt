@@ -18,6 +18,7 @@ vendor/etc/usb_audio_policy_configuration.xml
 -vendor/lib/libaudioproxy.so
 -vendor/lib/libfloatingfeature.so
 -vendor/lib/libprofileparamstorage.so
+-vendor/lib/libspatializerparamstorage.so
 -vendor/lib/librecordalive.so
 -vendor/lib/libsecaudiocoreutils.so
 -vendor/lib/libsecaudioinfo.so
@@ -60,6 +61,10 @@ vendor/firmware/dax_param.bin
 -vendor/lib64/libsensorlistener.so
 -vendor/lib64/libuniapi.so
 -vendor/lib64/libuniplugin.so
+
+## Camera Firmware
+vendor/firmware/fimc_is_lib.bin
+vendor/firmware/fimc_is_rta.bin
 
 ## Codecs
 vendor/etc/media_codecs.xml
@@ -163,10 +168,6 @@ vendor/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc
 -vendor/lib64/omx/libOMX.Exynos.VP9.Decoder.so
 -vendor/lib64/omx/libOMX.Exynos.VP9.Encoder.so
 -vendor/lib64/omx/libOMX.Exynos.WMV.Decoder.so
-
-## OMX Firmware
-vendor/firmware/fimc_is_lib.bin
-vendor/firmware/fimc_is_rta.bin
 
 ## RIL
 -vendor/lib/libaudio-ril.so
