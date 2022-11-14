@@ -112,6 +112,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 ## Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
+TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/samsung/gta4xl
 
 ## Keymaster
