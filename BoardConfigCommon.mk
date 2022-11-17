@@ -58,6 +58,7 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 ## Display
+BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
 TARGET_SCREEN_DENSITY := 240
 
 ## Dynamic Partitions
@@ -140,6 +141,7 @@ BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := universal9611
 TARGET_BOOTLOADER_BOARD_NAME := exynos9611
 TARGET_SOC := exynos9611
+include hardware/samsung_slsi-linaro/config/BoardConfig9611.mk
 
 ## Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
