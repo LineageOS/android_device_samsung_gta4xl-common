@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f13ab646_0f8b5b93",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-01-04T07:58:40Z",
+      "side": 1,
+      "message": "i know i am a bit late to the party, but are i guess you were not aware of https://review.lineageos.org/c/LineageOS/android_bootable_recovery/+/335555",
+      "revId": "59887b3cb4dcf0bba73b1760de50503f398cc3f1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
