@@ -67,8 +67,8 @@
 /dev/video11              0660   mediacodec mediadrm
 
 # wfd
-/dev/tsmux                0660   oem_5386      graphics
-/dev/repeater             0660   oem_5386      graphics
+/dev/tsmux                0660   media      graphics
+/dev/repeater             0660   media      graphics
 
 # camera
 /dev/video101             0660   cameraserver   camera
@@ -150,39 +150,42 @@
 # audio
 /dev/seiren               0660   system     audio
 
-# Mobicore
-/dev/mobicore             0600   drmrpc     drmrpc
-/dev/mobicore-user        0666   drm        drmrpc
+# TEEGRIS
+/dev/tzdev                0666   system     system
+/dev/tziwsock             0666   system     system
+/dev/tziwshmem            0660   system     system
+/dev/ionfd2phys           0660   system     system
+/dev/tuihw                0660   system     system
+/dev/tzirs                0660   system     system
+/dev/nwfsdev              0660   system     system
 
 # Secure MEM driver
 /dev/s5p-smem             0660   system     system
 
-# cbd
-/dev/block/sda5           0400   radio      radio
-/dev/umts_ramdump0        0660   radio      radio
-
 # DM tools
-/dev/umts_dm0             0660   radio      radio
-/dev/umts_router          0660   radio      radio
-
-# SIPC RIL
-/dev/umts_boot0           0660   radio      radio
-/dev/umts_ipc0            0660   radio      radio
-/dev/umts_ipc1            0660   radio      radio
-/dev/umts_rfs0            0660   radio      radio
-
-# Modem Interface
-/dev/block/platform/13520000.ufs/by-name/radio          0660   system     radio
-/dev/block/platform/13520000.ufs/by-name/cp_debug       0660   radio      system
-/sys/devices/platform/10000.mif_pdata	sim/ds_detect	0660	radio	system
-/dev/umts*                0660   system     radio
-/dev/umts_csd             0660   system     loop_radio
-/dev/smd4                 0660   system     system
-/dev/ramdump_memshare     0660   system     radio
-/dev/umts_ciq*            0660   system     bridge_rw
+/dev/ttyGS0               0660   system     system
+/dev/ttyGS1               0660   system     system
+/dev/ttyGS2               0660   system     system
 
 # dev ril bridge
-/dev/drb	          0660   system     radio
+/dev/drb	              0660   system     radio
+
+# Modem Interface
+/dev/block/by-name/radio    0660   system     radio
+/dev/block/by-name/cp_debug 0660   radio      system
+/dev/umts*                  0660   system     radio
+/dev/umts_csd               0660   system     loop_radio
+/dev/smd4                   0660   system     radio
+/dev/ramdump_memshare       0660   system     radio
+/dev/umts_ciq*              0660   system     bridge_rw
+
+# FRP
+/dev/block/platform/13520000.ufs/by-name/frp 0660   root      system
+
+# Google FRP solution
+/dev/block/by-name/persistent    0660    system    system
+# Reactivation lock
+/dev/block/by-name/steady    0660    system    system
 
 # interactive governor parameters
 /sys/devices/system/cpu/cpu*	cpufreq/interactive/timer_rate			0660	system	system
@@ -220,22 +223,11 @@
 # Sensor Hub
 /dev/ssp_sensorhub        0660   system     system
 /dev/ssp_data_injection   0660   system     system
-/dev/iio:device*          0660   system		system
+/dev/iio:device*          0660   system     system
 /sys/devices/platform/11980000.contexthub/iio:device*    buffer/enable       0660    system    system
 /sys/devices/platform/11980000.contexthub/iio:device*    buffer/length       0660    system    system
 /sys/bus/iio/devices/iio:device*    0664   system     radio
 
-# Google FRP solution
-/dev/block/platform/13520000.ufs/by-name/persistent    0660    system    system
-
-# Reactivation lock
-/dev/block/platform/13520000.ufs/by-name/steady    0660    system    system
-
-# TEEGRIS
-/dev/tzdev		0666	system		system
-/dev/tziwsock		0666	system		system
-/dev/ionfd2phys		0660	system		system
-/dev/tuihw		0660	system		system
-/dev/tzirs		0660	system		system
-/dev/nwfsdev		0660	system		system
-
+# Grip Sensor
+/dev/input/event*				0660	system	input
+/sys/devices/virtual/input/input*   enable      0660	system	input
