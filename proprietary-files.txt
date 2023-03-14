@@ -34,10 +34,6 @@ vendor/firmware/AP_AUDIO_SLSI.bin
 vendor/firmware/calliope_iva.bin
 vendor/firmware/dax_param.bin
 
-## Bluetooth
-# Bluetooth (aptX) - from raven - TP1A.220624.021
--product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
-
 ## Camera
 -vendor/lib/hw/camera.exynos9611.so
 -vendor/lib/libexynoscamera_plugin.so
