@@ -1,4 +1,4 @@
-# Common proprietary files - from Samsung package version P610XXU2FWA5, unless pinned
+# Common proprietary files - from Samsung package version P610XXS3FWD2, unless pinned
 
 ## Audio
 vendor/etc/default_volume_tables.xml
@@ -11,7 +11,7 @@ vendor/etc/usb_audio_policy_configuration.xml
 -vendor/lib/vndk/libaudioroute.so;MODULE=libaudioroute.exynos9611
 -vendor/lib/libsamsungDiamondVoice.so
 -vendor/lib/libSamsungPostProcessConvertor.so
--vendor/lib/lib_SamsungRec_07001.so
+-vendor/lib/lib_SamsungRec_07010.so
 -vendor/lib/lib_SoundAlive_SRC384_ver320.so
 -vendor/lib/lib_soundaliveresampler.so
 -vendor/lib/libalsautils_sec.so
