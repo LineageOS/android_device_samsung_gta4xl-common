@@ -66,6 +66,9 @@ function blob_fixup() {
         vendor/lib*/libskeymaster4device.so)
             "${PATCHELF}" --replace-needed libcrypto.so libcrypto-v33.so "${2}"
             ;;
+        vendor/lib*/libwvhidl.so)
+            "${PATCHELF}" --replace-needed libprotobuf-cpp-lite-3.9.1.so libprotobuf-cpp-full-3.9.1.so "${2}"
+            ;;
     esac
 }
 
