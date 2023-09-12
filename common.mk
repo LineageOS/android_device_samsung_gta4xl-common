@@ -87,6 +87,9 @@ PRODUCT_PACKAGES += \
     gralloc.exynos9611 \
     libion
 
+PRODUCT_PACKAGES += \
+    libGrallocWrapper
+
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
