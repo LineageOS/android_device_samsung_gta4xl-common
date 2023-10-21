@@ -3379,40 +3379,8 @@ int proxy_open_playback_stream(void *proxy_stream, int32_t min_size_frames, void
                   ppcmconfig->rate, ppcmconfig->format,
                   ppcmconfig->start_threshold, ppcmconfig->stop_threshold);
 
-            /* virtual pcm handling for Primary & Deep streams */
-            if (apstream->stream_type == ASTREAM_PLAYBACK_PRIMARY) {
-                /* DMA PCM should be started */
-                if (pcm_start(apstream->dma_pcm) == 0) {
-                    ALOGI("proxy-%s: PCM Device(%s) with SR(%u) PF(%d) CC(%d) is started",
-                          __func__, pcm_path, ppcmconfig->rate, ppcmconfig->format, ppcmconfig->channels);
-                } else {
-                    ALOGE("proxy-%s: PCM Device(%s) with SR(%u) PF(%d) CC(%d) cannot be started as error(%s)",
-                          __func__, pcm_path, ppcmconfig->rate, ppcmconfig->format, ppcmconfig->channels,
-                          pcm_get_error(apstream->dma_pcm));
-                    goto err_open;
-                }
-
-                /* open virtual primary pcm node */
-                apstream->pcm = pcm_open(VIRTUAL_PRIMARY_PLAYBACK_CARD, VIRTUAL_PRIMARY_PLAYBACK_DEVICE,
-                                            flags, &apstream->pcmconfig);
-                if (apstream->pcm && !pcm_is_ready(apstream->pcm)) {
-                    /* pcm_open does always return pcm structure, not NULL */
-                    ALOGE("%s-%s: Virtual PCM Device is not ready with Sampling_Rate(%u) error(%s)!",
-                          stream_table[apstream->stream_type], __func__, apstream->pcmconfig.rate,
-                          pcm_get_error(apstream->pcm));
-                    goto err_open;
-                }
-
-                snprintf(pcm_path, sizeof(pcm_path), "/dev/snd/pcmC%uD%u%c", VIRTUAL_PRIMARY_PLAYBACK_CARD, VIRTUAL_PRIMARY_PLAYBACK_DEVICE,'p');
-                ALOGI("%s-%s: The opened Virtual PCM Device is %s with Sampling_Rate(%u) PCM_Format(%d)  PCM_start-threshold(%d) PCM_stop-threshold(%d)",
-                      stream_table[apstream->stream_type], __func__, pcm_path,
-                      apstream->pcmconfig.rate, apstream->pcmconfig.format,
-                      apstream->pcmconfig.start_threshold, apstream->pcmconfig.stop_threshold);
-
-            } else {
-                apstream->pcm = apstream->dma_pcm;
-                apstream->dma_pcm = NULL;
-            }
+            apstream->pcm = apstream->dma_pcm;
+            apstream->dma_pcm = NULL;
 
             apstream->compress = NULL;
 
@@ -4374,40 +4342,8 @@ int proxy_open_capture_stream(void *proxy_stream, int32_t min_size_frames, void 
               stream_table[apstream->stream_type], __func__, pcm_path,
               apstream->pcmconfig.rate, apstream->pcmconfig.format, apstream->pcmconfig.channels);
 
-        /* Virtual dai PCM is required only for normal capture */
-        if (apstream->stream_type != ASTREAM_CAPTURE_LOW_LATENCY &&
-            apstream->stream_type != ASTREAM_CAPTURE_CALL &&
-            apstream->stream_type != ASTREAM_CAPTURE_FM_TUNER &&
-            apstream->stream_type != ASTREAM_CAPTURE_FM_RECORDING &&
-            apstream->stream_type != ASTREAM_CAPTURE_MMAP) {
-            /* WDMA pcm should be started before opening virtual pcm */
-            if (pcm_start(apstream->dma_pcm) == 0) {
-                ALOGI("proxy-%s: PCM Device(%s) with SR(%u) PF(%d) CC(%d) is started",
-                      __func__, pcm_path, apstream->pcmconfig.rate, apstream->pcmconfig.format, apstream->pcmconfig.channels);
-            } else {
-                ALOGE("proxy-%s: PCM Device(%s) with SR(%u) PF(%d) CC(%d) cannot be started as error(%s)",
-                      __func__, pcm_path, apstream->pcmconfig.rate, apstream->pcmconfig.format, apstream->pcmconfig.channels,
-                      pcm_get_error(apstream->dma_pcm));
-                goto err_open;
-            }
-
-            apstream->pcm = pcm_open(VIRTUAL_PRIMARY_CAPTURE_CARD, VIRTUAL_PRIMARY_CAPTURE_DEVICE, flags, &apstream->pcmconfig);
-            if (apstream->pcm && !pcm_is_ready(apstream->pcm)) {
-                /* pcm_open does always return pcm structure, not NULL */
-                ALOGE("%s-%s: Virtual PCM Device is not ready with Sampling_Rate(%u) error(%s)!",
-                      stream_table[apstream->stream_type], __func__, apstream->pcmconfig.rate,
-                      pcm_get_error(apstream->pcm));
-                goto err_open;
-            }
-
-            snprintf(pcm_path, sizeof(pcm_path), "/dev/snd/pcmC%uD%u%c", VIRTUAL_PRIMARY_CAPTURE_CARD, VIRTUAL_PRIMARY_CAPTURE_DEVICE, 'c');
-            ALOGI("%s-%s: The opened Virtual PCM Device is %s with Sampling_Rate(%u) PCM_Format(%d) Channel(%d)",
-                  stream_table[apstream->stream_type], __func__, pcm_path,
-                  apstream->pcmconfig.rate, apstream->pcmconfig.format, apstream->pcmconfig.channels);
-        } else {
-            apstream->pcm = apstream->dma_pcm;
-            apstream->dma_pcm = NULL;
-        }
+        apstream->pcm = apstream->dma_pcm;
+        apstream->dma_pcm = NULL;
 
         apstream->compress = NULL;
 
