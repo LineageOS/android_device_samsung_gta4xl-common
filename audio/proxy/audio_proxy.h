@@ -164,7 +164,8 @@ struct audio_proxy
 #endif
 
     bool support_btsco;
-    struct pcm *btsco_playback;
+    struct pcm *btsco_erap[BTSCO_MAX_ERAP_IDX];
+    int btsco_samplerate;
 
     /* FM Radio Configuration */
     bool fm_internal;

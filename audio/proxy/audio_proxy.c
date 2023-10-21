@@ -52,6 +52,7 @@
 #include "audio_tables.h"
 #include "audio_definition.h"
 #include "audio_board_info.h"
+#include "voice_definition.h"
 
 #include "audio_usb_proxy_interface.h"
 #ifdef SUPPORT_BTA2DP_OFFLOAD
@@ -177,8 +178,12 @@ bool is_needed_config(void *proxy, int config_type)
 
     switch (config_type) {
         case NEED_VOICEPCM_REOPEN:
-            if (aproxy->btsco_playback)
-                ret = true;
+            for (int i = 0; i < BTSCO_MAX_ERAP_IDX; i++) {
+                if (aproxy->btsco_erap[i]) {
+                    ret = true;
+                    break;
+                }
+            }
             break;
 
         case SUPPORT_USB_BY_PRIMARY:
@@ -990,59 +995,69 @@ err_open:
     return ;
 }
 
-static void disable_btsco_playback(void *proxy)
+static void disable_btsco_erap(void *proxy, int i)
 {
     struct audio_proxy *aproxy = proxy;
     char pcm_path[MAX_PCM_PATH_LEN];
 
     if (aproxy->support_btsco) {
+        char type = 'p';
+        if ((btsco_erap_flag[i] & PCM_IN) != 0)
+            type = 'c';
+
         snprintf(pcm_path, sizeof(pcm_path), "/dev/snd/pcmC%uD%u%c",
-                 BTSCO_PLAYBACK_CARD, BTSCO_PLAYBACK_DEVICE, 'p');
+                 btsco_erap_device[i][0], btsco_erap_device[i][1], type);
 
         /* Disables BT-SCO Playback Path */
-        if (aproxy->btsco_playback) {
-            pcm_stop(aproxy->btsco_playback);
-            pcm_close(aproxy->btsco_playback);
-            aproxy->btsco_playback = NULL;
+        if (aproxy->btsco_erap[i]) {
+            pcm_stop(aproxy->btsco_erap[i]);
+            pcm_close(aproxy->btsco_erap[i]);
+            aproxy->btsco_erap[i] = NULL;
 
-            ALOGI("proxy-%s: BTSCO Playback PCM Device(%s) is stopped & closed!", __func__, pcm_path);
+            ALOGI("proxy-%s: BTSCO ERAP PCM Device(%s) is stopped & closed!", __func__, pcm_path);
         }
     }
 
     return ;
 }
 
-static void enable_btsco_playback(void *proxy)
+static void enable_btsco_erap(void *proxy, int i)
 {
     struct audio_proxy *aproxy = proxy;
-    struct pcm_config pcmconfig = pcm_config_btsco_playback;
+    struct pcm_config pcmconfig = pcm_config_btsco;
     char pcm_path[MAX_PCM_PATH_LEN];
 
     if (aproxy->support_btsco) {
+        char type = 'p';
+        if ((btsco_erap_flag[i] & PCM_IN) != 0)
+            type = 'c';
+
         snprintf(pcm_path, sizeof(pcm_path), "/dev/snd/pcmC%uD%u%c",
-                 BTSCO_PLAYBACK_CARD, BTSCO_PLAYBACK_DEVICE, 'p');
+                 btsco_erap_device[i][0], btsco_erap_device[i][1], type);
 
         /* Enables BT-SCO Playback Path */
-        if (aproxy->btsco_playback == NULL) {
-            aproxy->btsco_playback = pcm_open(BTSCO_PLAYBACK_CARD, BTSCO_PLAYBACK_DEVICE,
-                                              PCM_OUT | PCM_MONOTONIC, &pcmconfig);
-            if (aproxy->btsco_playback && !pcm_is_ready(aproxy->btsco_playback)) {
+        if (aproxy->btsco_erap[i] == NULL) {
+            pcmconfig.rate = aproxy->btsco_samplerate;
+
+            aproxy->btsco_erap[i] = pcm_open(btsco_erap_device[i][0], btsco_erap_device[i][1],
+                                              btsco_erap_flag[i], &pcmconfig);
+            if (aproxy->btsco_erap[0] && !pcm_is_ready(aproxy->btsco_erap[i])) {
                 /* pcm_open does always return pcm structure, not NULL */
-                ALOGE("proxy-%s: BTSCO Playback PCM Device(%s) with SR(%u) PF(%d) CC(%d) is not ready as error(%s)",
+                ALOGE("proxy-%s: BTSCO ERAP PCM Device(%s) with SR(%u) PF(%d) CC(%d) is not ready as error(%s)",
                       __func__, pcm_path, pcmconfig.rate, pcmconfig.format, pcmconfig.channels,
-                      pcm_get_error(aproxy->btsco_playback));
+                      pcm_get_error(aproxy->btsco_erap[i]));
                 goto err_open;
             }
-            ALOGVV("proxy-%s: BTSCO Playback PCM Device(%s) with SR(%u) PF(%d) CC(%d) is opened",
+            ALOGVV("proxy-%s: BTSCO ERAP PCM Device(%s) with SR(%u) PF(%d) CC(%d) is opened",
                   __func__, pcm_path, pcmconfig.rate, pcmconfig.format, pcmconfig.channels);
 
-            if (pcm_start(aproxy->btsco_playback) == 0) {
-                ALOGI("proxy-%s: BTSCO Playback PCM Device(%s) with SR(%u) PF(%d) CC(%d) is opened & started",
+            if (pcm_start(aproxy->btsco_erap[i]) == 0) {
+                ALOGI("proxy-%s: BTSCO ERAP PCM Device(%s) with SR(%u) PF(%d) CC(%d) is opened & started",
                       __func__, pcm_path, pcmconfig.rate, pcmconfig.format, pcmconfig.channels);
             } else {
-                ALOGE("proxy-%s: BTSCO Playback PCM Device(%s) with SR(%u) PF(%d) CC(%d) cannot be started as error(%s)",
+                ALOGE("proxy-%s: BTSCO ERAP PCM Device(%s) with SR(%u) PF(%d) CC(%d) cannot be started as error(%s)",
                       __func__, pcm_path, pcmconfig.rate, pcmconfig.format, pcmconfig.channels,
-                      pcm_get_error(aproxy->btsco_playback));
+                      pcm_get_error(aproxy->btsco_erap[i]));
                 goto err_open;
             }
         }
@@ -1051,7 +1066,7 @@ static void enable_btsco_playback(void *proxy)
     return ;
 
 err_open:
-    disable_btsco_playback(proxy);
+    disable_btsco_erap(proxy, i);
     return ;
 }
 
@@ -1566,12 +1581,14 @@ static void enable_internal_path(void *proxy, int ausage, device_type target_dev
         enable_a2dp_mute_playback(proxy);
 #endif
     } else if (target_device == DEVICE_BT_HEADSET || target_device == DEVICE_SPEAKER_AND_BT_HEADSET) {
-        enable_erap_in(aproxy, target_device);
         if (target_device == DEVICE_SPEAKER_AND_BT_HEADSET) {
             enable_spkamp_reference(aproxy);
+            enable_erap_in(aproxy, target_device);
             enable_spkamp_playback(aproxy);
+        } else {
+            enable_erap_in(aproxy, target_device);
         }
-        enable_btsco_playback(aproxy);
+        enable_btsco_erap(aproxy, BTSCO_SPK_ERAP_IDX);
     } else if (target_device == DEVICE_HEADSET || target_device == DEVICE_HEADPHONE ||
                target_device == DEVICE_CALL_FWD) {
         /* In cases of CP/AP Calland Loopback, ERAP Path is needed for SE */
@@ -1685,7 +1702,7 @@ static void disable_internal_path(void *proxy, int ausage, device_type target_de
         disable_bta2dp_playback(aproxy);
 #endif
     } else if (target_device == DEVICE_BT_HEADSET || target_device == DEVICE_SPEAKER_AND_BT_HEADSET) {
-        disable_btsco_playback(aproxy);
+        disable_btsco_erap(aproxy, BTSCO_SPK_ERAP_IDX);
         if (target_device == DEVICE_SPEAKER_AND_BT_HEADSET) {
             disable_spkamp_playback(aproxy);
             disable_spkamp_reference(aproxy);
@@ -4257,6 +4274,8 @@ int proxy_close_capture_stream(void *proxy_stream)
         pcm_close(apstream->dma_pcm);
         apstream->dma_pcm = NULL;
     }
+    if (aproxy->btsco_erap[BTSCO_MIC_ERAP_IDX])
+        disable_btsco_erap(aproxy, BTSCO_MIC_ERAP_IDX);
     ALOGI("%s-%s: closed PCM Device", stream_table[apstream->stream_type], __func__);
 
     return ret;
@@ -4341,6 +4360,11 @@ int proxy_open_capture_stream(void *proxy_stream, int32_t min_size_frames, void 
         ALOGI("%s-%s: The opened PCM Device is %s with Sampling_Rate(%u) PCM_Format(%d) Channel(%d)",
               stream_table[apstream->stream_type], __func__, pcm_path,
               apstream->pcmconfig.rate, apstream->pcmconfig.format, apstream->pcmconfig.channels);
+
+        if (aproxy->active_capture_device == DEVICE_BT_HEADSET_MIC
+                || aproxy->active_capture_device == DEVICE_BT_NREC_HEADSET_MIC) {
+            enable_btsco_erap(aproxy, BTSCO_MIC_ERAP_IDX);
+        }
 
         apstream->pcm = apstream->dma_pcm;
         apstream->dma_pcm = NULL;
@@ -5099,6 +5123,8 @@ void  proxy_stop_voice_call(void *proxy)
     struct audio_proxy *aproxy = (struct audio_proxy *)proxy;
     voice_rx_stop(aproxy);
     voice_tx_stop(aproxy);
+    if (aproxy->btsco_erap[BTSCO_MIC_ERAP_IDX])
+        disable_btsco_erap(proxy, BTSCO_MIC_ERAP_IDX);
 
     return ;
 }
@@ -5108,6 +5134,11 @@ void proxy_start_voice_call(void *proxy)
     struct audio_proxy *aproxy = (struct audio_proxy *)proxy;
 
     voice_rx_start(aproxy);
+
+    if (aproxy->active_capture_device == DEVICE_BT_HEADSET_MIC
+            || aproxy->active_capture_device == DEVICE_BT_NREC_HEADSET_MIC) {
+        enable_btsco_erap(proxy, BTSCO_MIC_ERAP_IDX);
+    }
 
     /*
     ** Voice TX and FM Radio are sharing same WDMA.
@@ -5695,6 +5726,24 @@ int proxy_set_parameters(void *proxy, void *parameters)
         pthread_mutex_unlock(&aproxy->a2dp_lock);
     }
 #endif
+
+    // BT SCO WideBand Configuration
+    ret = str_parms_get_str(parms, AUDIO_PARAMETER_KEY_BT_SCO_WB, value, sizeof(value));
+    if (ret >= 0) {
+        if (!strcmp(value, AUDIO_PARAMETER_VALUE_ON)) {
+            aproxy->btsco_samplerate = WB_SAMPLING_RATE;
+
+            ALOGI("%s BT SCO WBS device connected [%d]", __func__, aproxy->btsco_samplerate);
+        } else if (!strcmp(value, AUDIO_PARAMETER_VALUE_OFF)) {
+            aproxy->btsco_samplerate = NB_SAMPLING_RATE;
+
+            ALOGI("%s BT SC NBS device connected [%d]", __func__, aproxy->btsco_samplerate);
+        }
+
+        str_parms_del(parms, AUDIO_PARAMETER_KEY_BT_SCO_WB);
+    }
+
+
     /* Check USB parameters */
     status = proxy_usb_set_parameters((void *)aproxy->usb_aproxy, parameters);
 
@@ -6191,7 +6240,9 @@ void * proxy_init(void)
 #endif
     // In case of External BT-SCO Support, initializes Playback Stream
     aproxy->support_btsco = true;
-    aproxy->btsco_playback = NULL;
+    for (int i = 0; i < BTSCO_MAX_ERAP_IDX; i++)
+        aproxy->btsco_erap[i] = NULL;
+    aproxy->btsco_samplerate = 8000;
 
     // Voice Call PCM Devices
     aproxy->call_rx = NULL;

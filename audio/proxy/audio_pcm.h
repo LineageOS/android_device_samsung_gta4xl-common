@@ -325,25 +325,43 @@ struct compr_config compr_config_offload_playback = {
 
 // Internal loopback related PCM node configurations
 // PCM Configurations for BT-SCO Playback Stream
-#define BTSCO_PLAYBACK_CARD             SOUND_CARD0
-#define BTSCO_PLAYBACK_DEVICE           SOUND_DEVICE_ABOX_RDMA6
+#define BTSCO_ERAP_CARD                 SOUND_CARD0
+#define BTSCO_PLAYBACK_ERAP_DEVICE      SOUND_DEVICE_ABOX_RDMA8
+#define BTSCO_CAPTURE_ERAP_DEVICE       SOUND_DEVICE_ABOX_RDMA6
 
-#define BTSCO_PLAYBACK_CHANNELS         DEFAULT_MEDIA_CHANNELS
-#define BTSCO_PLAYBACK_SAMPLING_RATE    DEFAULT_MEDIA_SAMPLING_RATE
-#define BTSCO_PLAYBACK_PERIOD_SIZE      480
-#define BTSCO_PLAYBACK_PERIOD_COUNT     4
-#define BTSCO_PLAYBACK_FORMAT           DEFAULT_MEDIA_32_FORMAT
-#define BTSCO_PLAYBACK_START            BTSCO_PLAYBACK_PERIOD_SIZE
-#define BTSCO_PLAYBACK_STOP             UINT_MAX
+#define BTSCO_ERAP_CHANNELS         DEFAULT_VOICE_CHANNELS
+#define BTSCO_ERAP_SAMPLING_RATE    SAMPLING_RATE_FB
+#define BTSCO_ERAP_PERIOD_SIZE      80
+#define BTSCO_ERAP_PERIOD_COUNT     2
+#define BTSCO_ERAP_FORMAT           DEFAULT_MEDIA_FORMAT
+#define BTSCO_ERAP_START            BTSCO_ERAP_PERIOD_SIZE
+#define BTSCO_ERAP_STOP             UINT_MAX
 
-struct pcm_config pcm_config_btsco_playback = {
-    .channels        = BTSCO_PLAYBACK_CHANNELS,
-    .rate            = BTSCO_PLAYBACK_SAMPLING_RATE,
-    .period_size     = BTSCO_PLAYBACK_PERIOD_SIZE,
-    .period_count    = BTSCO_PLAYBACK_PERIOD_COUNT,
-    .format          = BTSCO_PLAYBACK_FORMAT,
-    .start_threshold = BTSCO_PLAYBACK_START,
-    .stop_threshold  = BTSCO_PLAYBACK_STOP,
+struct pcm_config pcm_config_btsco = {
+    .channels        = BTSCO_ERAP_CHANNELS,
+    .rate            = BTSCO_ERAP_SAMPLING_RATE,
+    .period_size     = BTSCO_ERAP_PERIOD_SIZE,
+    .period_count    = BTSCO_ERAP_PERIOD_COUNT,
+    .format          = BTSCO_ERAP_FORMAT,
+    .start_threshold = BTSCO_ERAP_START,
+    .stop_threshold  = BTSCO_ERAP_STOP,
+};
+
+// BT SCO ERAP PCM node index
+typedef enum {
+    BTSCO_SPK_ERAP_IDX = 0,
+    BTSCO_MIC_ERAP_IDX = 1,
+    BTSCO_MAX_ERAP_IDX = 2,
+} btsco_erap_idx_type_t;
+
+// BT SCO fixed PCM nodes for ERAP path
+unsigned int btsco_erap_device[BTSCO_MAX_ERAP_IDX][2] = {
+    [0] = {BTSCO_ERAP_CARD, BTSCO_PLAYBACK_ERAP_DEVICE},
+    [1] = {BTSCO_ERAP_CARD, BTSCO_CAPTURE_ERAP_DEVICE},
+};
+unsigned int btsco_erap_flag[BTSCO_MAX_ERAP_IDX] = {
+    [BTSCO_SPK_ERAP_IDX] = (PCM_IN | PCM_MONOTONIC),
+    [BTSCO_MIC_ERAP_IDX] = (PCM_OUT | PCM_MONOTONIC),
 };
 
 // Internal loopback related PCM node configurations
