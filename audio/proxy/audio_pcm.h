@@ -103,7 +103,7 @@
 #define SAMPLING_RATE_FB                48000               // 48KHz(Full Band)
 
 #define DEFAULT_VOICE_CHANNELS          2                   // Stereo
-#define DEFAULT_VOICE_SAMPLING_RATE     SAMPLING_RATE_SWB
+#define DEFAULT_VOICE_SAMPLING_RATE     SAMPLING_RATE_FB
 #define DEFAULT_VOICE_FORMAT            PCM_FORMAT_S16_LE   // 16bit PCM
 
 /* Default values for CP Voice Recording PCM Configuration */

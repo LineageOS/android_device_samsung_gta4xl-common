@@ -622,70 +622,6 @@ err_open:
     return ;
 }
 
-static void disable_voice_tx_direct_in(void *proxy)
-{
-    struct audio_proxy *aproxy = proxy;
-    char pcm_path[MAX_PCM_PATH_LEN];
-
-    if (aproxy->call_tx_direct) {
-        snprintf(pcm_path, sizeof(pcm_path), "/dev/snd/pcmC%uD%u%c",
-                 VC_FMRADIO_CAPTURE_CARD, VC_FMRADIO_CAPTURE_DEVICE, 'c');
-
-        pcm_stop(aproxy->call_tx_direct);
-        pcm_close(aproxy->call_tx_direct);
-        aproxy->call_tx_direct= NULL;
-        ALOGI("proxy-%s: Voice Call TX Direct PCM Device(%s) is stopped & closed!", __func__, pcm_path);
-    }
-
-    return;
-}
-
-static void enable_voice_tx_direct_in(void *proxy, device_type target_device __unused)
-{
-    struct audio_proxy *aproxy = proxy;
-    struct pcm_config pcmconfig;
-    char pcm_path[MAX_PCM_PATH_LEN];
-
-    if (aproxy->call_tx_direct== NULL) {
-#ifdef SUPPORT_QUAD_MIC
-        if (is_quad_mic_device(target_device)) {
-            pcmconfig = pcm_config_vc_quad_mic_capture;
-            ALOGI("proxy-%s: Quad-Mic config for Voice Call TX Direct ", __func__);
-        } else
-#endif
-            pcmconfig = pcm_config_vc_fmradio_capture;
-        snprintf(pcm_path, sizeof(pcm_path), "/dev/snd/pcmC%uD%u%c",
-                 VC_FMRADIO_CAPTURE_CARD, VC_FMRADIO_CAPTURE_DEVICE, 'c');
-
-        aproxy->call_tx_direct = pcm_open(VC_FMRADIO_CAPTURE_CARD,
-                                        VC_FMRADIO_CAPTURE_DEVICE,
-                                        PCM_IN | PCM_MONOTONIC, &pcmconfig);
-        if (aproxy->call_tx_direct && !pcm_is_ready(aproxy->call_tx_direct)) {
-            /* pcm_open does always return pcm structure, not NULL */
-            ALOGE("proxy-%s: Voice Call TX Direct PCM Device(%s) with SR(%u) PF(%d) CC(%d) is not ready as error(%s)",
-                  __func__, pcm_path, pcmconfig.rate, pcmconfig.format, pcmconfig.channels,
-                  pcm_get_error(aproxy->call_tx_direct));
-            goto err_open;
-        }
-        ALOGVV("proxy-%s: Voice Call TX Direct PCM Device(%s) with SR(%u) PF(%d) CC(%d) is opened",
-              __func__, pcm_path, pcmconfig.rate, pcmconfig.format, pcmconfig.channels);
-
-        if (pcm_start(aproxy->call_tx_direct) == 0) {
-            ALOGI("proxy-%s: Voice Call TX Direct PCM Device(%s) with SR(%u) PF(%d) CC(%d) is opened & started",
-                  __func__, pcm_path, pcmconfig.rate, pcmconfig.format, pcmconfig.channels);
-        } else {
-            ALOGE("proxy-%s: Voice Call TX Direct PCM Device(%s) with SR(%u) PF(%d) CC(%d) cannot be started as error(%s)",
-                  __func__, pcm_path, pcmconfig.rate, pcmconfig.format, pcmconfig.channels,
-                  pcm_get_error(aproxy->call_tx_direct));
-            goto err_open;
-        }
-    }
-
-    return;
-err_open:
-    disable_voice_tx_direct_in(proxy);
-}
-
 static void disable_usb_out_loopback(void *proxy)
 {
     struct audio_proxy *aproxy = proxy;
@@ -1643,11 +1579,6 @@ static void enable_internal_path(void *proxy, int ausage, device_type target_dev
         enable_usb_in_loopback(proxy);
     }
 
-    /* enable direct MIC path pcm for voiceCall scenario */
-    if ((is_usage_CPCall(ausage) || is_usage_Loopback(ausage)) &&
-        target_device >= DEVICE_MAIN_MIC)
-        enable_voice_tx_direct_in(aproxy, target_device);
-
     return;
 }
 
@@ -1660,11 +1591,6 @@ static void disable_internal_path(void *proxy, int ausage, device_type target_de
         ALOGI("proxy-%s: skip disabling internal path", __func__);
         return;
     }
-
-    /* disable direct MIC path pcm for voiceCall scenario */
-    if ((is_usage_CPCall(ausage) || is_usage_Loopback(ausage)) &&
-        target_device >= DEVICE_MAIN_MIC)
-        disable_voice_tx_direct_in(aproxy);
 
     if (target_device == DEVICE_SPEAKER ||
         target_device == DEVICE_SPEAKER2 || target_device == DEVICE_SPEAKER_DUAL ||
