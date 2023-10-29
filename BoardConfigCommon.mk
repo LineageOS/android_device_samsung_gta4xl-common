@@ -15,9 +15,6 @@
 
 COMMON_PATH := device/samsung/gta4xl-common
 
-## Include path
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
-
 ## Inherit proprietary vendor configuartion
 include vendor/samsung/gta4xl-common/BoardConfigVendor.mk
 
