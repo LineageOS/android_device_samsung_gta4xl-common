@@ -397,13 +397,6 @@
 	<path name="dev-fm_radio-input">
 	</path>
 
-	<path name="dev-main-mic">
-		<ctl name="IN1R Mux" value="A" />
-		<ctl name="IN1R HPF Switch" value="1" />
-		<ctl name="AIF1TX1 Input 1" value="IN1L" />
-		<ctl name="AIF1TX2 Input 1" value="IN1L" />
-	</path>
-
 	<path name="dev-2nd-mic">
 		<ctl name="IN1L Mux" value="A" />
 		<ctl name="IN1L HPF Switch" value="1" />
@@ -425,6 +418,14 @@
 		<ctl name="IN1L Mux" value="A" />
 		<ctl name="AIF1TX1 Input 1" value="IN1R" />
 		<ctl name="AIF1TX2 Input 1" value="IN1L" />
+	</path>
+
+	<path name="dev-main-mic">
+		<path name="route-ap-record" />
+		<path name="dev-dual-invert-mic" />
+		<ctl name="ABOX OEM AP Call BW" value="0x020201" />
+		<ctl name="ABOX OEM Bargein type" value="2" />
+		<ctl name="ABOX OEM FM Mode" value="2" />
 	</path>
 
 	<path name="dev-headset-mic">
@@ -3658,8 +3659,10 @@
 	<!-- Input stage volume -->
 	<!-- media input volume -->
 	<path name="gain-media-mic">
-		<ctl name="IN1L Volume" value="12" />
-		<ctl name="IN1L Digital Volume" value="122" />
+		<ctl name="IN1R Volume" value="18" />
+		<ctl name="IN1L Volume" value="18" />
+		<ctl name="IN1R Digital Volume" value="128" />
+		<ctl name="IN1L Digital Volume" value="128" />
 	</path>
 
 	<path name="gain-media-2nd-mic">
@@ -3814,8 +3817,7 @@
 
 	<!-- recognition input volume -->
 	<path name="gain-recognition-mic">
-		<ctl name="IN1L Volume" value="31" />
-		<ctl name="IN1L Digital Volume" value="128" />
+		<path name="gain-media-mic" />
 	</path>
 
 	<path name="gain-recognition-2nd-mic">
