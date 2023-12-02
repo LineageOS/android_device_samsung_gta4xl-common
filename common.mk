@@ -21,6 +21,9 @@ $(call inherit-product, vendor/samsung/gta4xl-common/gta4xl-common-vendor.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
