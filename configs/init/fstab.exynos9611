@@ -9,15 +9,15 @@ product                                                 /product                
 odm                                                     /odm                    ext4    ro,errors=panic         wait,logical,first_stage_mount
 odm                                                     /odm                    erofs   ro                      wait,logical,first_stage_mount
 
-/dev/block/platform/13520000.ufs/by-name/metadata       /metadata               ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,first_stage_mount,formattable,check,fsverity
+/dev/block/platform/13520000.ufs/by-name/metadata       /metadata               ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic      wait,first_stage_mount,formattable,check,fsverity
 
-/dev/block/platform/13520000.ufs/by-name/boot           /boot                   emmc    defaults                                                                                recoveryonly
-/dev/block/platform/13520000.ufs/by-name/recovery       /recovery               emmc    defaults                                                                                recoveryonly
-/dev/block/platform/13520000.ufs/by-name/vbmeta         /vbmeta                 emmc    defaults                                                                                first_stage_mount
-/dev/block/platform/13520000.ufs/by-name/cache          /cache                  ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check
+/dev/block/platform/13520000.ufs/by-name/boot           /boot                   emmc    defaults                                                                                     recoveryonly
+/dev/block/platform/13520000.ufs/by-name/recovery       /recovery               emmc    defaults                                                                                     recoveryonly
+/dev/block/platform/13520000.ufs/by-name/vbmeta         /vbmeta                 emmc    defaults                                                                                     first_stage_mount
+/dev/block/platform/13520000.ufs/by-name/cache          /cache                  ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic      wait,check
 /dev/block/platform/13520000.ufs/by-name/userdata       /data                   f2fs    noatime,nosuid,nodev,discard,reserve_root=32768,resgid=1065,fsync_mode=nobarrier,inlinecrypt latemount,wait,check,quota,formattable,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,metadata_encryption=aes-256-xts,keydirectory=/metadata/vold/metadata_encryption,fscompress,readahead_size_kb=128
-/dev/block/platform/13520000.ufs/by-name/efs            /mnt/vendor/efs         ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check
-/dev/block/platform/13520000.ufs/by-name/cpefs          /mnt/vendor/cpefs       ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic wait,check,nofail
+/dev/block/platform/13520000.ufs/by-name/efs            /mnt/vendor/efs         ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic      wait,check
+/dev/block/platform/13520000.ufs/by-name/cpefs          /mnt/vendor/cpefs       ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic      wait,check,nofail
 /dev/block/platform/13520000.ufs/by-name/misc           /misc                   emmc    defaults        defaults
 
 /devices/platform/13550000.dwmmc2/mmc_host/*            auto                    auto    defaults        voldmanaged=sdcard:auto,encryptable=userdata
