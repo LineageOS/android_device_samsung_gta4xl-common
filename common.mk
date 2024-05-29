@@ -73,7 +73,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.5-service_64.samsung \
+    android.hardware.camera.provider-service.samsung \
     libsensorndkbridge
 
 PRODUCT_PACKAGES += \
