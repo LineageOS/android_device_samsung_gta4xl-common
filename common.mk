@@ -36,10 +36,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.primary.exynos9611 \
     audio.r_submix.default \
-    audio.usb.default \
-    libaudioroute \
-    libtinyalsa \
-    libtinycompress
+    audio.usb.default
 
 PRODUCT_PACKAGES += \
     SamsungDAP
