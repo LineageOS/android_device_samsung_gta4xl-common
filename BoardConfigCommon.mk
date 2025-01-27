@@ -33,7 +33,8 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 ## Audio
-BOARD_LOW_LATENCY_CAPTURE_DURATION := 20
+$(call soong_config_set,exynos_audio,PREDEFINED_LOW_CAPTURE_DURATION,20)
+$(call soong_config_set,exynos_audio,PROXY_LIBRARY,//device/samsung/gta4xl-common:libaudioproxy)
 
 ## Bluetooth
 BOARD_HAVE_BLUETOOTH_SLSI := true

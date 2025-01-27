@@ -1,0 +1,25 @@
+From 609858da196a3bcd330cbd364fb3554e2e1bbdd0 Mon Sep 17 00:00:00 2001
+From: Jan Altensen <info@stricted.net>
+Date: Mon, 27 Jan 2025 22:04:12 +0100
+Subject: [PATCH 1/1] gta4xl-common: Include gralloc3 namespace
+
+Change-Id: I6649654bf3302a560e912402949c5e4a71c83d64
+---
+ common.mk | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/common.mk b/common.mk
+index 763d596..58b97c9 100644
+--- a/common.mk
++++ b/common.mk
+@@ -261,6 +261,7 @@ PRODUCT_SOONG_NAMESPACES += \
+     hardware/google/interfaces \
+     hardware/google/pixel \
+     hardware/samsung \
++    hardware/samsung_slsi-linaro/exynos/gralloc/gralloc3 \
+     hardware/samsung_slsi/libbt
+ 
+ # Thermal
+-- 
+2.39.5
+
