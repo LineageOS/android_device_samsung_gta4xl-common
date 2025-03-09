@@ -115,7 +115,7 @@ TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/samsung/gta4xl
 
 ## Keymaster
-TARGET_KEYMASTER_VARIANT := samsung
+$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/gta4xl-common:libskeymaster4device)
 
 ## Manifest
 # HIDL
