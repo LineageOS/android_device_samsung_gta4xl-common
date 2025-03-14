@@ -265,6 +265,11 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung_slsi-linaro/exynos/gralloc/gralloc3 \
     hardware/samsung_slsi/libbt
 
+# Task profiles
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/task_profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    $(COMMON_PATH)/configs/task_profiles/task_profiles_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.pixel \
