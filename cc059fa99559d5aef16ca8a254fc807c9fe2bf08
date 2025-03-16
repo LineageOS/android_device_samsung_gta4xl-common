@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e49d64f4_3925f1c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32442
+      },
+      "writtenOn": "2025-03-16T06:22:13Z",
+      "side": 1,
+      "message": "This change is no longer required as of https://review.lineageos.org/c/LineageOS/android_system_core/+/422077, no?",
+      "revId": "cc059fa99559d5aef16ca8a254fc807c9fe2bf08",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
