@@ -33,6 +33,24 @@
       "message": "considering we need to revert the support for schedtune back in anyway, yeah, I\u0027d just rely on the revert.",
       "revId": "cc059fa99559d5aef16ca8a254fc807c9fe2bf08",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0a1347e_d78f454e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32442
+      },
+      "writtenOn": "2025-03-16T09:30:34Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_system_core/+/422633 as well.",
+      "parentUuid": "e49d64f4_3925f1c8",
+      "revId": "cc059fa99559d5aef16ca8a254fc807c9fe2bf08",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
