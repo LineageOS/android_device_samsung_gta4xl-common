@@ -16,6 +16,23 @@
       "message": "This change is no longer required as of https://review.lineageos.org/c/LineageOS/android_system_core/+/422077, no?",
       "revId": "cc059fa99559d5aef16ca8a254fc807c9fe2bf08",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38cb8d5e_3e97b64c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-03-16T06:23:56Z",
+      "side": 1,
+      "message": "considering we need to revert the support for schedtune back in anyway, yeah, I\u0027d just rely on the revert.",
+      "revId": "cc059fa99559d5aef16ca8a254fc807c9fe2bf08",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
