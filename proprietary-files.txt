@@ -6,9 +6,9 @@ vendor/etc/dolby/dax-default.xml
 vendor/etc/usb_audio_policy_configuration.xml
 
 ## Audio - Dolby Atmos
--vendor/lib/libprofileparamstorage.so
--vendor/lib/libsecaudiocoreutils.so
--vendor/lib/libspatializerparamstorage.so
+vendor/lib/libprofileparamstorage.so
+vendor/lib/libsecaudiocoreutils.so
+vendor/lib/libspatializerparamstorage.so
 
 ## Audio Firmware
 vendor/firmware/APBargeIn_AUDIO_SLSI.bin
@@ -18,20 +18,20 @@ vendor/firmware/calliope_iva.bin
 vendor/firmware/dax_param.bin
 
 ## Camera
--vendor/lib/hw/camera.exynos9611.so
--vendor/lib/libexynoscamera_plugin.so
--vendor/lib64/hw/camera.exynos9611.so
--vendor/lib64/libexynoscamera_plugin.so
+vendor/lib/hw/camera.exynos9611.so
+vendor/lib/libexynoscamera_plugin.so
+vendor/lib64/hw/camera.exynos9611.so
+vendor/lib64/libexynoscamera_plugin.so
 
 ## Camera dependencies
--vendor/lib/libSEF.quram.so
--vendor/lib/libsensorlistener.so
--vendor/lib/libuniapi.so
--vendor/lib/libuniplugin.so
--vendor/lib64/libSEF.quram.so
--vendor/lib64/libsensorlistener.so
--vendor/lib64/libuniapi.so
--vendor/lib64/libuniplugin.so
+vendor/lib/libSEF.quram.so
+vendor/lib/libsensorlistener.so
+vendor/lib/libuniapi.so
+vendor/lib/libuniplugin.so
+vendor/lib64/libSEF.quram.so
+vendor/lib64/libsensorlistener.so
+vendor/lib64/libuniapi.so
+vendor/lib64/libuniplugin.so
 
 ## Camera Firmware
 vendor/firmware/fimc_is_lib.bin
@@ -61,39 +61,39 @@ vendor/firmware/setfile_5e9.bin
 vendor/firmware/spkamp.bin
 
 ## Gatekeeper
--vendor/lib/hw/gatekeeper.exynos9611.so
--vendor/lib64/hw/gatekeeper.exynos9611.so
+vendor/lib/hw/gatekeeper.exynos9611.so
+vendor/lib64/hw/gatekeeper.exynos9611.so
 
 ## GPS
--vendor/bin/hw/vendor.samsung.hardware.gnss@2.0-service
+vendor/bin/hw/vendor.samsung.hardware.gnss@2.0-service
 vendor/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc
--vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
+vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 
 ## Graphics
--vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1;SYMLINK=vendor/lib/hw/vulkan.universal9611.so
--vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1;SYMLINK=vendor/lib64/hw/vulkan.universal9611.so
+vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1;SYMLINK=vendor/lib/hw/vulkan.universal9611.so
+vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1;SYMLINK=vendor/lib64/hw/vulkan.universal9611.so
 
 ## Keymaster
--vendor/lib64/libkeymaster_helper.so
--vendor/lib64/libskeymaster4device.so
+vendor/lib64/libkeymaster_helper.so
+vendor/lib64/libskeymaster4device.so
 
 ## RIL - from a14 - A145FXXS5BXA1
--vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos9611|96bf65152d221ac528b763f625bb93e56899033d
--vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos9611|26efd845750d4ad91e3a5c5dd7d95d40e8ef52a8
+vendor/lib/libsecril-client.so|96bf65152d221ac528b763f625bb93e56899033d
+vendor/lib64/libsecril-client.so|26efd845750d4ad91e3a5c5dd7d95d40e8ef52a8
 
 ## SECNATIVE
--vendor/lib/libsecnativefeature.so
--vendor/lib64/libsecnativefeature.so
+vendor/lib/libsecnativefeature.so
+vendor/lib64/libsecnativefeature.so
 
 ## TEEGRIS
--vendor/bin/tzdaemon
--vendor/bin/tzts_daemon
+vendor/bin/tzdaemon
+vendor/bin/tzts_daemon
 vendor/etc/init/teegris.rc
--vendor/lib/libuuid.so
--vendor/lib/libteecl.so
--vendor/lib64/libiwt.so
--vendor/lib64/libteecl.so
--vendor/lib64/libuuid.so
+vendor/lib/libuuid.so;MODULE_SUFFIX=_vendor
+vendor/lib/libteecl.so
+vendor/lib64/libiwt.so
+vendor/lib64/libteecl.so
+vendor/lib64/libuuid.so;MODULE_SUFFIX=_vendor
 
 ## TEEGRIS Firmware
 vendor/tee/00000000-0000-0000-0000-000000010081
@@ -115,16 +115,19 @@ vendor/tee/tui/resolution_common/ID00000100
 
 ## Sensors
 vendor/etc/sensors/hals.conf
--vendor/lib/sensors.sensorhub.so
--vendor/lib/sensors.grip.so
--vendor/lib64/sensors.sensorhub.so
--vendor/lib64/sensors.grip.so
+vendor/lib/sensors.sensorhub.so
+vendor/lib/sensors.grip.so
+vendor/lib64/sensors.sensorhub.so
+vendor/lib64/sensors.grip.so
+
+## VNDK - from prebuilts/vndk/v33 - android-15.0.0_r20
+vendor/lib64/libcrypto-tm.so;FIX_SONAME|7291c0e41fa86b3739df0c0c20de21e88f43661a|f53b9d897921ade77c511eb98955db374fcc5c69
 
 ## Widevine - From P610XXU2EVC5
--vendor/bin/hw/android.hardware.drm@1.4-service.widevine|60d0ed267f1468110a79c64a56af3c978f269f18
+vendor/bin/hw/android.hardware.drm@1.4-service.widevine|60d0ed267f1468110a79c64a56af3c978f269f18
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|992f63e9700da29099e0590858a6becaaadb2976
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
--vendor/lib/libwvhidl.so|3246cb592658f2d8f23901ac8ddcc03b6176f06f
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
+vendor/lib/libwvhidl.so|3246cb592658f2d8f23901ac8ddcc03b6176f06f|3246cb592658f2d8f23901ac8ddcc03b6176f06f
 
 ## Wi-Fi
 vendor/etc/init/wifi.rc
