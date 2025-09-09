@@ -16,6 +16,24 @@
       "message": "related commit: https://github.com/LineageOS/android_hardware_samsung/commit/38094acf430550fb44eeee9259bfa7426c97946a",
       "revId": "661703e0bc9e5061dcab9f7d606692fafd5ccc34",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "888ec419_40595d7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25925
+      },
+      "writtenOn": "2025-09-09T06:06:04Z",
+      "side": 1,
+      "message": "Already done in https://review.lineageos.org/c/LineageOS/android_device_samsung_gta4xl-common/+/450511",
+      "parentUuid": "7cf64f87_1b380eeb",
+      "revId": "661703e0bc9e5061dcab9f7d606692fafd5ccc34",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
