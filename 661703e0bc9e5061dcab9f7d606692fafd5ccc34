@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cf64f87_1b380eeb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35916
+      },
+      "writtenOn": "2025-09-09T06:05:00Z",
+      "side": 1,
+      "message": "related commit: https://github.com/LineageOS/android_hardware_samsung/commit/38094acf430550fb44eeee9259bfa7426c97946a",
+      "revId": "661703e0bc9e5061dcab9f7d606692fafd5ccc34",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
