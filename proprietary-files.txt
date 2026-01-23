@@ -33,6 +33,10 @@ vendor/lib64/libsensorlistener.so
 vendor/lib64/libuniapi.so
 vendor/lib64/libuniplugin.so
 
+## Camera Dummy Libs
+vendor/lib/libexynoscamera3.so;DUMMY_SHARED_LIB
+vendor/lib64/libexynoscamera3.so;DUMMY_SHARED_LIB
+
 ## Camera Firmware
 vendor/firmware/fimc_is_lib.bin
 vendor/firmware/fimc_is_rta.bin
